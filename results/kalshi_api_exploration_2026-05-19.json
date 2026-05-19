@@ -1,0 +1,106 @@
+{
+  "exchange_status": {
+    "exchange_active": true,
+    "trading_active": true
+  },
+  "financial_series_count": 502,
+  "financial_series_sample": [
+    {
+      "ticker": "FRMMIN",
+      "title": "Mortgage rate low"
+    },
+    {
+      "ticker": "KXETHETF",
+      "title": "ETH ETF listed"
+    },
+    {
+      "ticker": "GDPUSMIN",
+      "title": "Negative US GDP growth"
+    },
+    {
+      "ticker": "KXDOLLARFED",
+      "title": "FOMC decision -> EUR/USD"
+    },
+    {
+      "ticker": "KXACPICORE",
+      "title": "Annual core inflation"
+    },
+    {
+      "ticker": "KXUKUNRATE",
+      "title": "United Kingdom Unemployment Rate"
+    },
+    {
+      "ticker": "CPIFOOD",
+      "title": "CPI on food"
+    },
+    {
+      "ticker": "KXPSAVERT",
+      "title": "US personal saving rate below x% in [year]?"
+    },
+    {
+      "ticker": "KXGDPUSMIN",
+      "title": "Negative US GDP growth"
+    },
+    {
+      "ticker": "KXUSDTWDMIN",
+      "title": "U.S. Dollar/Taiwan Dollar exchange rate"
+    }
+  ],
+  "rate_cut_markets_count": 21,
+  "top_rate_cut_markets": [
+    {
+      "ticker": "KXRATECUTCOUNT-26DEC31-T0",
+      "title": "Will the Fed cut rates 0 times?",
+      "yes_bid": "0.6540",
+      "yes_ask": "0.6550",
+      "volume": "1016196.35",
+      "status": "active"
+    },
+    {
+      "ticker": "KXRATECUTCOUNT-26DEC31-T2",
+      "title": "Will the Fed cut rates 2 times?",
+      "yes_bid": "0.1010",
+      "yes_ask": "0.1160",
+      "volume": "356140.84",
+      "status": "active"
+    },
+    {
+      "ticker": "KXRATECUTCOUNT-26DEC31-T1",
+      "title": "Will the Fed cut rates 1 times?",
+      "yes_bid": "0.1830",
+      "yes_ask": "0.1850",
+      "volume": "342306.10",
+      "status": "active"
+    },
+    {
+      "ticker": "KXRATECUTCOUNT-26DEC31-T3",
+      "title": "Will the Fed cut rates 3 times?",
+      "yes_bid": "0.0170",
+      "yes_ask": "0.0240",
+      "volume": "249299.07",
+      "status": "active"
+    },
+    {
+      "ticker": "KXRATECUTCOUNT-26DEC31-T4",
+      "title": "Will the Fed cut rates 4 times?",
+      "yes_bid": "0.0100",
+      "yes_ask": "0.0180",
+      "volume": "219598.14",
+      "status": "active"
+    }
+  ],
+  "orderbook": {
+    "ticker": "KXRATECUTCOUNT-26DEC31-T0",
+    "yes_orders_count": 37,
+    "no_orders_count": 38,
+    "top_yes_bid": [
+      "0.0010",
+      "1000.00"
+    ],
+    "top_no_bid": [
+      "0.0010",
+      "1000.00"
+    ]
+  },
+  "auth_test": "expected_401_401"
+}
