@@ -1,0 +1,100 @@
+{
+  "run_at": "2026-05-19T16:50:17.362784+00:00",
+  "markets_fetched": 1690,
+  "new_records": 1690,
+  "unique_markets_in_db": 12430,
+  "total_snapshots": 15427,
+  "price_coverage": {
+    "with_prices": 1690,
+    "total": 1690
+  },
+  "top_events": [
+    {
+      "event_ticker": "KXSILVERW-26MAY2217",
+      "cnt": 40
+    },
+    {
+      "event_ticker": "KXGOLDMON-26MAY2917",
+      "cnt": 40
+    },
+    {
+      "event_ticker": "KXNCAABBGS-26",
+      "cnt": 35
+    },
+    {
+      "event_ticker": "KXFEDERALCHARGE-27JAN01",
+      "cnt": 32
+    },
+    {
+      "event_ticker": "KXNASDAQ100Y-26DEC31H1600",
+      "cnt": 30
+    },
+    {
+      "event_ticker": "KXNASDAQ100-26MAY22H1600",
+      "cnt": 30
+    },
+    {
+      "event_ticker": "KXNASDAQ100-26MAY19H1600",
+      "cnt": 30
+    },
+    {
+      "event_ticker": "KXBTCY-27JAN0100",
+      "cnt": 28
+    },
+    {
+      "event_ticker": "KXECONSTATCPIYOY-26MAY",
+      "cnt": 26
+    },
+    {
+      "event_ticker": "KXECONSTATCPIYOY-26JUN",
+      "cnt": 26
+    }
+  ],
+  "top_markets_by_volume": [
+    {
+      "ticker": "KXBTCMAX150-25-26MAY31-149999.99",
+      "title": "When will Bitcoin hit $150k?",
+      "yes_bid_dollars": 0.0,
+      "yes_ask_dollars": 0.01,
+      "last_price_dollars": 0.01,
+      "volume_fp": 6329620.07,
+      "volume_24h_fp": 2647.47
+    },
+    {
+      "ticker": "KXBTC2026200-27JAN01-200000",
+      "title": "Will Bitcoin be above $200000 by Jan 1, 2027 at 11:59PM ET?",
+      "yes_bid_dollars": 0.05,
+      "yes_ask_dollars": 0.07,
+      "last_price_dollars": 0.07,
+      "volume_fp": 4491324.88,
+      "volume_24h_fp": 36255.98
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-C25",
+      "title": "Will the Federal Reserve Cut rates by 25bps at their June 2026 meeting?",
+      "yes_bid_dollars": 0.02,
+      "yes_ask_dollars": 0.03,
+      "last_price_dollars": 0.03,
+      "volume_fp": 2316046.64,
+      "volume_24h_fp": 93775.22
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-H0",
+      "title": "Will the Federal Reserve Hike rates by 0bps at their June 2026 meeting?",
+      "yes_bid_dollars": 0.96,
+      "yes_ask_dollars": 0.97,
+      "last_price_dollars": 0.97,
+      "volume_fp": 2026207.65,
+      "volume_24h_fp": 70967.28
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-H25",
+      "title": "Will the Federal Reserve Hike rates by 25bps at their June 2026 meeting?",
+      "yes_bid_dollars": 0.01,
+      "yes_ask_dollars": 0.02,
+      "last_price_dollars": 0.02,
+      "volume_fp": 1946046.11,
+      "volume_24h_fp": 378101.81
+    }
+  ]
+}
