@@ -1,0 +1,79 @@
+{
+  "bead_id": "autonomy-xmy0",
+  "date": "2026-05-19",
+  "exchange": "coinbase",
+  "pairs": ["BTC/USDT", "ETH/USDT"],
+  "timeframe": "5m",
+  "timerange": "20260401-20260519",
+  "mode": "dry_run_backtest",
+  "starting_balance_usdt": 1000,
+  "strategies": {
+    "BuyHold": {
+      "description": "Split $500 BTC + $500 ETH, hold 48 days",
+      "trades": 0,
+      "win_rate_pct": null,
+      "total_profit_pct": 6.37,
+      "max_drawdown_pct": 0,
+      "sharpe": null,
+      "btc_return_pct": 12.39,
+      "eth_return_pct": 0.35,
+      "note": "Synthetic benchmark calculated from price data, not Freqtrade backtest"
+    },
+    "SimpleRSIStrategy": {
+      "description": "RSI < 30 entry, RSI > 70 exit",
+      "trades": 134,
+      "win_rate_pct": 0.7,
+      "total_profit_pct": -31.48,
+      "max_drawdown_pct": 31.48,
+      "sharpe": -107.12,
+      "avg_trade_duration": "7:57:00",
+      "exit_reasons": {
+        "stop_loss": 11,
+        "exit_signal": 123
+      }
+    },
+    "EMAStrategy": {
+      "description": "EMA 9/21 crossover + RSI filter",
+      "trades": 377,
+      "win_rate_pct": 1.9,
+      "total_profit_pct": -90.13,
+      "max_drawdown_pct": 90.13,
+      "sharpe": -561.68,
+      "avg_trade_duration": "2:22:00",
+      "exit_reasons": {
+        "roi": 10,
+        "exit_signal": 367
+      }
+    },
+    "LLMStrategy": {
+      "description": "Bollinger Bands mean reversion + RSI + ATR stop",
+      "trades": 369,
+      "win_rate_pct": 0.0,
+      "total_profit_pct": -90.16,
+      "max_drawdown_pct": 90.16,
+      "sharpe": -1493.05,
+      "avg_trade_duration": "0:21:00",
+      "exit_reasons": {
+        "exit_signal": 1,
+        "trailing_stop_loss": 368
+      }
+    }
+  },
+  "capital_ready": false,
+  "capital_ready_reasons": [
+    "All LLM-generated strategies are unprofitable vs +6.37% buy-and-hold benchmark",
+    "Best strategy (SimpleRSI) lost -31.48%",
+    "Win rates are 0-2% — strategies consistently lose",
+    "Mean-reversion approaches fail in bull market conditions",
+    "No paper-trading longevity evidence"
+  ],
+  "recommendations": [
+    "Pivot to trend-following strategies (EMA cross with ADX filter)",
+    "Add market regime detection (sideways vs trending)",
+    "Use Freqtrade hyperopt for parameter optimization",
+    "Test on bear market data (2022)",
+    "Consider FreqAI ML-based adaptive signals"
+  ],
+  "repo": "https://github.com/hiveminderbot/trading-research",
+  "commit": "dc579f3"
+}

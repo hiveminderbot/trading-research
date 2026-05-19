@@ -1,0 +1,45 @@
+{
+  "bead_id": "autonomy-xmy0",
+  "date": "2026-05-19",
+  "strategy": "LLMStrategy",
+  "strategy_description": "RSI + MACD crossover with ATR stop-loss",
+  "exchange": "coinbase",
+  "pairs": ["BTC/USDT", "ETH/USDT"],
+  "timeframe": "5m",
+  "timerange": "20260401-20260519",
+  "mode": "dry_run_backtest",
+  "starting_balance_usdt": 1000,
+  "final_balance_usdt": 1000,
+  "absolute_profit_usdt": 0,
+  "total_profit_pct": 0.0,
+  "cagr_pct": 0.0,
+  "sharpe_closed_trades": -0.76,
+  "profit_factor": 0.04,
+  "total_trades": 2,
+  "win_draw_loss": [1, 0, 1],
+  "win_rate_pct": 50.0,
+  "avg_trade_duration": "6 days, 19:58:00",
+  "market_change_pct": 7.98,
+  "max_drawdown_usdt": 0,
+  "max_drawdown_pct": 0.0,
+  "rejected_entry_signals": 0,
+  "per_pair": {
+    "BTC/USDT": {"trades": 1, "avg_profit_pct": 0.0, "win": 1, "loss": 0, "win_pct": 100},
+    "ETH/USDT": {"trades": 1, "avg_profit_pct": 0.0, "win": 0, "loss": 1, "win_pct": 0}
+  },
+  "signal_analysis": {
+    "BTC_entry_signals": 1,
+    "BTC_exit_signals": 3,
+    "ETH_entry_signals": 2,
+    "ETH_exit_signals": 1
+  },
+  "capital_ready": false,
+  "capital_ready_reasons": [
+    "Strategy returned 0% vs +7.98% market buy-and-hold",
+    "Only 2 trades in 48 days — insufficient sample size",
+    "Dry-run bot ran briefly; no multi-hour paper-trading evidence",
+    "No risk-control validation (ATR stop-loss not triggered)"
+  ],
+  "repo": "https://github.com/hiveminderbot/trading-research",
+  "commit": "d8295d4"
+}
