@@ -2,7 +2,10 @@
   "bead_id": "autonomy-xmy0",
   "date": "2026-05-19",
   "exchange": "coinbase",
-  "pairs": ["BTC/USDT", "ETH/USDT"],
+  "pairs": [
+    "BTC/USDT",
+    "ETH/USDT"
+  ],
   "timeframe": "5m",
   "timerange": "20260401-20260519",
   "mode": "dry_run_backtest",
@@ -57,23 +60,49 @@
         "exit_signal": 1,
         "trailing_stop_loss": 368
       }
+    },
+    "TrendFollowStrategy": {
+      "description": "EMA 9/21 crossover + ADX > 25 trend filter + RSI > 50",
+      "trades": 107,
+      "win_rate_pct": 2.8,
+      "total_profit_pct": -25.07,
+      "max_drawdown_pct": 25.07,
+      "sharpe": -23.17,
+      "avg_trade_duration": "2:37:00",
+      "exit_reasons": {
+        "exit_signal": 104,
+        "roi": 3
+      }
+    },
+    "RegimeSwitchStrategy": {
+      "description": "ADX regime detection: trend-following when ADX>25, mean-reversion when ADX<20+BB squeeze",
+      "trades": 190,
+      "win_rate_pct": 0.0,
+      "total_profit_pct": -44.91,
+      "max_drawdown_pct": 44.91,
+      "sharpe": -39.45,
+      "avg_trade_duration": "2:44:00",
+      "exit_reasons": {
+        "stop_loss": 1,
+        "exit_signal": 189
+      }
     }
   },
   "capital_ready": false,
   "capital_ready_reasons": [
     "All LLM-generated strategies are unprofitable vs +6.37% buy-and-hold benchmark",
-    "Best strategy (SimpleRSI) lost -31.48%",
-    "Win rates are 0-2% — strategies consistently lose",
-    "Mean-reversion approaches fail in bull market conditions",
+    "Best strategy (TrendFollow) lost -25.07% vs +6.37% benchmark",
+    "Win rates are 0-2.8% \u2014 strategies consistently lose",
+    "Trend-following and regime-switching also fail on this timerange",
     "No paper-trading longevity evidence"
   ],
   "recommendations": [
-    "Pivot to trend-following strategies (EMA cross with ADX filter)",
-    "Add market regime detection (sideways vs trending)",
-    "Use Freqtrade hyperopt for parameter optimization",
-    "Test on bear market data (2022)",
-    "Consider FreqAI ML-based adaptive signals"
+    "Test on bear market data (2022) to see if mean-reversion works there",
+    "Use Freqtrade hyperopt for parameter optimization on 70/30 train/test split",
+    "Consider FreqAI ML-based adaptive signals instead of hand-coded rules",
+    "Evaluate if 5m timeframe is too noisy \u2014 try 1h or 4h",
+    "Reconsider whether crypto TA strategies are viable at all for this autonomy lab"
   ],
   "repo": "https://github.com/hiveminderbot/trading-research",
-  "commit": "dc579f3"
+  "commit": "ce23417"
 }
