@@ -1,0 +1,191 @@
+{
+  "report_id": "trading-research-2026-05-19",
+  "bead_id": "autonomy-487l",
+  "title": "LLM-Assisted Automated Trading Opportunities Outside Polymarket",
+  "date": "2026-05-19",
+  "classification": "tier-1.5-research-lead",
+  "researcher": "Trismegistus",
+  "summary": {
+    "avenues_researched": 7,
+    "adopt": ["Freqtrade", "Kalshi", "Manifold Markets (sandbox)"],
+    "revisit_later": ["Hummingbot", "Alpaca"],
+    "reject": ["Sports Arbitrage Betting", "DeFi Yield Farming"],
+    "primary_recommendation": "Freqtrade + Kalshi API",
+    "shortest_path_to_tier_2": "Install Freqtrade Docker, configure Binance testnet, implement LLM-generated RSI strategy, run 7-day paper trade"
+  },
+  "avenues": [
+    {
+      "name": "Freqtrade",
+      "type": "open-source-crypto-trading-bot",
+      "url": "https://github.com/freqtrade/freqtrade",
+      "http_status": 200,
+      "github_stars": 50510,
+      "github_forks": 10531,
+      "license": "GPL-3.0",
+      "language": "Python",
+      "capital_requirement_usd": "10-100",
+      "risk_level": "medium",
+      "paper_trading": true,
+      "llm_fit": "excellent",
+      "verdict": "adopt",
+      "why_it_matters": "Mature open-source Python framework with 50K+ stars, built-in backtesting, paper trading, and direct LLM strategy generation via Python functions",
+      "risks": ["overfitting", "exchange risk", "latency", "technical debt"],
+      "next_experiment": "Docker install + Binance testnet paper trade with LLM-generated RSI strategy"
+    },
+    {
+      "name": "Hummingbot",
+      "type": "open-source-market-making",
+      "url": "https://github.com/hummingbot/hummingbot",
+      "http_status": 200,
+      "github_stars": 18591,
+      "github_forks": 4674,
+      "license": "Apache-2.0",
+      "language": "Python",
+      "capital_requirement_usd": "1000+",
+      "risk_level": "high",
+      "paper_trading": true,
+      "llm_fit": "good",
+      "verdict": "revisit_later",
+      "why_it_matters": "Specialized for market making and DEX arbitrage; new Condor harness for AI agents; active foundation with exchange sponsorships",
+      "risks": ["complexity", "capital intensive", "impermanent loss"],
+      "next_experiment": "Revisit after Freqtrade validation succeeds"
+    },
+    {
+      "name": "Kalshi",
+      "type": "regulated-us-prediction-market",
+      "url": "https://kalshi.com/",
+      "api_docs": "https://trading-api.readme.io/reference/getting-started-with-kalshi-api",
+      "http_status": 429,
+      "api_docs_status": 200,
+      "regulation": "CFTC-regulated",
+      "capital_requirement_usd": "100-500",
+      "risk_level": "medium",
+      "paper_trading": true,
+      "demo_environment": true,
+      "llm_fit": "excellent",
+      "verdict": "adopt",
+      "why_it_matters": "First CFTC-regulated US prediction market; well-documented REST API with demo; events uncorrelated with crypto/stocks; no VPN needed",
+      "risks": ["limited markets", "thin liquidity", "binary risk", "regulatory risk"],
+      "next_experiment": "Register demo account, generate API keys, implement LLM news-analysis strategy"
+    },
+    {
+      "name": "Manifold Markets",
+      "type": "play-money-prediction-market",
+      "url": "https://manifold.markets/",
+      "api_docs": "https://docs.manifold.markets/api",
+      "http_status": 200,
+      "api_status": 200,
+      "capital_requirement_usd": "0",
+      "risk_level": "none",
+      "paper_trading": "n/a (entirely play money)",
+      "llm_fit": "excellent",
+      "verdict": "adopt_as_sandbox",
+      "why_it_matters": "Zero-cost sandbox for testing LLM prediction accuracy before risking real money; large diverse market base; functional alpha API",
+      "risks": ["no real money", "market quality may not reflect real beliefs", "alpha API instability"],
+      "next_experiment": "Fetch markets via API, run LLM predictions for 30 days, track accuracy"
+    },
+    {
+      "name": "Sports Arbitrage Betting",
+      "type": "sportsbook-arbitrage",
+      "url": "https://github.com/personal-coding/Live-Sports-Arbitrage-Bet-Finder",
+      "guide": "https://oddspapi.io/blog/arbitrage-betting-bot-python/",
+      "http_status": 200,
+      "guide_status": 200,
+      "capital_requirement_usd": "500-1000",
+      "risk_level": "high",
+      "paper_trading": "simulated_only",
+      "llm_fit": "moderate",
+      "verdict": "reject",
+      "why_it_matters": "Theoretical guaranteed profit via cross-book arbitrage; open-source implementations exist",
+      "risks": ["account bans", "execution risk", "legal complexity", "scalability limits"],
+      "next_experiment": "None recommended"
+    },
+    {
+      "name": "Alpaca",
+      "type": "stock-options-api",
+      "url": "https://alpaca.markets/",
+      "docs": "https://alpaca.markets/docs/",
+      "http_status": 200,
+      "docs_status": 200,
+      "capital_requirement_usd": "1+",
+      "risk_level": "medium",
+      "paper_trading": true,
+      "llm_fit": "excellent",
+      "verdict": "tertiary",
+      "why_it_matters": "Developer-first API for US equities and options; commission-free; paper trading; modern REST API",
+      "risks": ["PDT rule ($25K for day trading)", "options complexity", "market risk", "API rate limits"],
+      "next_experiment": "Paper trading swing strategy after Freqtrade/Kalshi validation"
+    },
+    {
+      "name": "DeFi Yield Farming",
+      "type": "defi-yield-automation",
+      "url": "https://github.com/therumpshakingaction/DeFi-Yield-AutoFarming",
+      "guide": "https://johal.in/defi-yield-farming-bots-web3-py-automation-for-uniswap-v3-positions-2025/",
+      "http_status": 404,
+      "guide_status": 200,
+      "capital_requirement_usd": "1000+",
+      "risk_level": "very_high",
+      "paper_trading": "testnet_only",
+      "llm_fit": "moderate",
+      "verdict": "reject",
+      "why_it_matters": "Automated yield optimization across DeFi protocols; composable with multiple protocols",
+      "risks": ["smart contract bugs", "gas fees", "impermanent loss", "rug pulls", "complexity"],
+      "next_experiment": "None recommended"
+    }
+  ],
+  "source_validation": {
+    "validated_urls": [
+      {"url": "https://github.com/freqtrade/freqtrade", "status": 200},
+      {"url": "https://www.freqtrade.io/en/stable/", "status": 200},
+      {"url": "https://github.com/hummingbot/hummingbot", "status": 200},
+      {"url": "https://hummingbot.org/", "status": 200},
+      {"url": "https://trading-api.readme.io/reference/getting-started-with-kalshi-api", "status": 200},
+      {"url": "https://api.manifold.markets/v0/markets?limit=1", "status": 200},
+      {"url": "https://docs.manifold.markets/api", "status": 200},
+      {"url": "https://github.com/personal-coding/Live-Sports-Arbitrage-Bet-Finder", "status": 200},
+      {"url": "https://oddspapi.io/blog/arbitrage-betting-bot-python/", "status": 200},
+      {"url": "https://alpaca.markets/", "status": 200},
+      {"url": "https://alpaca.markets/docs/", "status": 200},
+      {"url": "https://johal.in/defi-yield-farming-bots-web3-py-automation-for-uniswap-v3-positions-2025/", "status": 200},
+      {"url": "https://predscope.com/guide/polymarket-alternatives", "status": 200},
+      {"url": "https://coinbureau.com/analysis/best-crypto-ai-trading-bots", "status": 200},
+      {"url": "https://3commas.io/", "status": 200}
+    ],
+    "failed_urls": [
+      {"url": "https://kalshi.com/", "status": 429, "note": "rate limited, not blocked"},
+      {"url": "https://cryptonews.com/cryptocurrency/polymarket-alternatives/", "status": 403},
+      {"url": "https://www.metaculus.com/", "status": 403},
+      {"url": "https://stoic.ai/", "status": 403},
+      {"url": "https://oddschecker.com/", "status": 403},
+      {"url": "https://developer.betfair.com/", "status": 403}
+    ]
+  },
+  "next_steps": {
+    "phase_1": {
+      "name": "Freqtrade Paper Trading",
+      "duration": "1 week",
+      "deliverable": "Backtest report + 7-day paper trade metrics",
+      "success_gate": "Sharpe ratio > 1.0, max drawdown < 10%"
+    },
+    "phase_2": {
+      "name": "Kalshi Demo Integration",
+      "duration": "1 week",
+      "deliverable": "Demo trade log + accuracy metrics",
+      "success_gate": "ROI > 10% over 30 days"
+    },
+    "phase_3": {
+      "name": "Manifold Validation",
+      "duration": "Ongoing",
+      "deliverable": "30-day prediction accuracy report",
+      "success_gate": "Accuracy > 60%"
+    },
+    "phase_4": {
+      "name": "Capital Deployment Gate",
+      "duration": "Conditional",
+      "deliverable": "Live trading with measured metrics",
+      "success_gate": "Paper/demo metrics meet thresholds"
+    }
+  },
+  "no_openviking_content": true,
+  "explicit_adopt_reject": true
+}
