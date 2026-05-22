@@ -81,6 +81,8 @@ class BacktestResult:
         }
 
 
+# ── Strategy: Original Momentum (percentage-based) ──────────────────────────
+
 def momentum_strategy(signals: List[Signal], position: Optional[Position]) -> str:
     """
     Simple momentum strategy:
@@ -96,14 +98,12 @@ def momentum_strategy(signals: List[Signal], position: Optional[Position]) -> st
     score = latest.signal_score or 0
 
     if position:
-        # Close if momentum reverses significantly
         if position.side == 'YES' and (mom3 < -0.02 or score < -0.3):
             return 'CLOSE'
         if position.side == 'NO' and (mom3 > 0.02 or score > 0.3):
             return 'CLOSE'
         return 'HOLD'
 
-    # No position - look for entry
     if mom3 > 0.05 and score > 0.2:
         return 'BUY_YES'
     if mom3 < -0.05 and score < -0.2:
@@ -111,6 +111,8 @@ def momentum_strategy(signals: List[Signal], position: Optional[Position]) -> st
 
     return 'HOLD'
 
+
+# ── Strategy: Mean Reversion ────────────────────────────────────────────────
 
 def mean_reversion_strategy(signals: List[Signal], position: Optional[Position]) -> str:
     """
@@ -141,10 +143,11 @@ def mean_reversion_strategy(signals: List[Signal], position: Optional[Position])
     return 'HOLD'
 
 
+# ── Strategy: Combined ──────────────────────────────────────────────────────
+
 def combined_strategy(signals: List[Signal], position: Optional[Position]) -> str:
     """
     Combined strategy: momentum + mean reversion with volume confirmation.
-    Requires strong signal_score and volume anomaly for entry.
     """
     if not signals:
         return 'HOLD'
@@ -156,14 +159,12 @@ def combined_strategy(signals: List[Signal], position: Optional[Position]) -> st
     mr = latest.mean_reversion_5 or 0
 
     if position:
-        # Trailing stop: close if score weakens significantly
         if position.side == 'YES' and (score < -0.1 or mom3 < -0.03):
             return 'CLOSE'
         if position.side == 'NO' and (score > 0.1 or mom3 > 0.03):
             return 'CLOSE'
         return 'HOLD'
 
-    # Entry requires volume confirmation
     if score > 0.4 and vol_z > 0.5 and mom3 > 0.03:
         return 'BUY_YES'
     if score < -0.4 and vol_z > 0.5 and mom3 < -0.03:
@@ -172,16 +173,198 @@ def combined_strategy(signals: List[Signal], position: Optional[Position]) -> st
     return 'HOLD'
 
 
+# ── Strategy: Penny Momentum (absolute-dollar, spread-aware) ────────────────
+
+def penny_momentum_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Penny momentum strategy for prediction-market dynamics:
+    - Entry on |abs_momentum_1| >= 0.01 (1 cent move)
+    - Only trade if spread < 0.10 (some liquidity)
+    - Only trade if mid_price in [0.05, 0.95] (avoid binary extremes)
+    - Close on reversal or at last snapshot
+    """
+    if not signals:
+        return 'HOLD'
+
+    latest = signals[-1]
+    abs1 = latest.abs_momentum_1
+    spread = latest.spread
+    mid = latest.mid_price
+
+    # Liquidity filters
+    if spread is None or spread >= 0.10:
+        return 'HOLD'
+    if mid is None or mid < 0.05 or mid > 0.95:
+        return 'HOLD'
+
+    if position:
+        # Close if momentum reverses
+        if position.side == 'YES' and abs1 is not None and abs1 < 0:
+            return 'CLOSE'
+        if position.side == 'NO' and abs1 is not None and abs1 > 0:
+            return 'CLOSE'
+        return 'HOLD'
+
+    # Entry: at least 1 cent move
+    if abs1 is not None and abs1 >= 0.01:
+        return 'BUY_YES'
+    if abs1 is not None and abs1 <= -0.01:
+        return 'BUY_NO'
+
+    return 'HOLD'
+
+
+# ── Strategy: Naive Momentum (permissive, for sparse data) ──────────────────
+
+def naive_momentum_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Naive momentum strategy with minimal filters for sparse prediction-market data:
+    - Entry on ANY non-zero abs_momentum_1 (even 0.001)
+    - No spread filter (data often has wide spreads)
+    - No mid_price filter (trade even near extremes)
+    - Close on next snapshot regardless (hold for one period)
+    """
+    if not signals:
+        return 'HOLD'
+
+    latest = signals[-1]
+    abs1 = latest.abs_momentum_1
+    mid = latest.mid_price
+
+    if position:
+        # Always close after holding one period
+        return 'CLOSE'
+
+    # Entry: any non-zero move
+    if abs1 is not None and abs1 > 0:
+        return 'BUY_YES'
+    if abs1 is not None and abs1 < 0:
+        return 'BUY_NO'
+
+    return 'HOLD'
+
+
+# ── Strategy: Event-Driven (trade on market initialization/settlement) ───────
+
+def event_driven_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Event-driven strategy for prediction markets:
+    - Entry when market goes from inactive (bid=0 or ask=0) to active (bid>0, ask>0)
+    - Or when price jumps significantly (>= 0.05) indicating new information
+    - Close on next snapshot
+    """
+    if not signals:
+        return 'HOLD'
+
+    latest = signals[-1]
+    abs1 = latest.abs_momentum_1
+    mid = latest.mid_price
+
+    if position:
+        return 'CLOSE'
+
+    # Entry: significant price jump (>= 5 cents)
+    if abs1 is not None and abs(abs1) >= 0.05:
+        if abs1 > 0:
+            return 'BUY_YES'
+        else:
+            return 'BUY_NO'
+
+    return 'HOLD'
+
+
+# ── Strategy: Spread Mean Reversion ─────────────────────────────────────────
+
+def spread_mean_reversion_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Spread mean reversion:
+    - Entry when price has moved >= 2 cents from previous snapshot
+    - Trade the reversion (buy YES after drop, buy NO after rise)
+    - Tight spread required (< 0.05)
+    """
+    if not signals:
+        return 'HOLD'
+
+    latest = signals[-1]
+    abs1 = latest.abs_momentum_1
+    spread = latest.spread
+    mid = latest.mid_price
+
+    if spread is None or spread >= 0.05:
+        return 'HOLD'
+    if mid is None or mid < 0.05 or mid > 0.95:
+        return 'HOLD'
+
+    if position:
+        # Close if price reverts back toward entry
+        if position.side == 'YES' and abs1 is not None and abs1 > 0:
+            return 'CLOSE'
+        if position.side == 'NO' and abs1 is not None and abs1 < 0:
+            return 'CLOSE'
+        return 'HOLD'
+
+    # Entry: trade the reversion after a 2+ cent move
+    if abs1 is not None and abs1 <= -0.02:
+        return 'BUY_YES'  # Price dropped, expect reversion up
+    if abs1 is not None and abs1 >= 0.02:
+        return 'BUY_NO'   # Price rose, expect reversion down
+
+    return 'HOLD'
+
+
+# ── Strategy: Volume Breakout ───────────────────────────────────────────────
+
+def volume_breakout_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Volume breakout:
+    - Entry when volume z-score > 1.5 AND abs_momentum >= 0.01
+    - Tight spread required
+    """
+    if not signals:
+        return 'HOLD'
+
+    latest = signals[-1]
+    vol_z = latest.volume_zscore_5 or 0
+    abs1 = latest.abs_momentum_1
+    spread = latest.spread
+    mid = latest.mid_price
+
+    if spread is None or spread >= 0.10:
+        return 'HOLD'
+    if mid is None or mid < 0.05 or mid > 0.95:
+        return 'HOLD'
+
+    if position:
+        if position.side == 'YES' and (abs1 is None or abs1 < 0):
+            return 'CLOSE'
+        if position.side == 'NO' and (abs1 is None or abs1 > 0):
+            return 'CLOSE'
+        return 'HOLD'
+
+    if vol_z > 1.5 and abs1 is not None and abs1 >= 0.01:
+        return 'BUY_YES'
+    if vol_z > 1.5 and abs1 is not None and abs1 <= -0.01:
+        return 'BUY_NO'
+
+    return 'HOLD'
+
+
+# ── Backtest Engine ─────────────────────────────────────────────────────────
+
+KALSHI_FEE_PER_CONTRACT = 0.01  # $0.01 per contract per side
+
+
 def run_backtest(
     signals_by_ticker: Dict[str, List[Signal]],
     strategy: Callable[[List[Signal], Optional[Position]], str],
     strategy_name: str,
     initial_capital: float = 1000.0,
-    position_size: float = 100.0  # Dollar amount per trade
+    position_size: float = 100.0,  # Dollar amount per trade
+    fee_per_contract: float = KALSHI_FEE_PER_CONTRACT,
 ) -> BacktestResult:
     """
     Run a backtest across all tickers using the provided strategy.
-    
+
     Simplification: we simulate holding until close signal or end of data.
     In reality, Kalshi contracts expire at a fixed date.
     """
@@ -192,7 +375,7 @@ def run_backtest(
     max_drawdown = 0.0
 
     for ticker, signals in signals_by_ticker.items():
-        if len(signals) < 3:
+        if len(signals) < 2:
             continue
 
         position: Optional[Position] = None
@@ -212,6 +395,9 @@ def run_backtest(
                     ticker=ticker, action='OPEN', side='YES',
                     price=sig.mid_price, time=sig.fetched_at
                 ))
+                # Entry fee
+                equity -= fee_per_contract * position_size
+                equity_curve.append(equity)
 
             elif action == 'BUY_NO' and not position and sig.mid_price is not None:
                 position = Position(
@@ -225,12 +411,15 @@ def run_backtest(
                     ticker=ticker, action='OPEN', side='NO',
                     price=1.0 - sig.mid_price, time=sig.fetched_at
                 ))
+                # Entry fee
+                equity -= fee_per_contract * position_size
+                equity_curve.append(equity)
 
             elif action == 'CLOSE' and position and sig.mid_price is not None:
                 exit_price = sig.mid_price if position.side == 'YES' else 1.0 - sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
-                if position.side == 'NO':
-                    pnl = ((1.0 - exit_price) - position.entry_price) * position.size
+                # Exit fee
+                pnl -= fee_per_contract * position.size
 
                 equity += pnl
                 equity_curve.append(equity)
@@ -250,8 +439,8 @@ def run_backtest(
             if last_sig.mid_price is not None:
                 exit_price = last_sig.mid_price if position.side == 'YES' else 1.0 - last_sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
-                if position.side == 'NO':
-                    pnl = ((1.0 - exit_price) - position.entry_price) * position.size
+                # Exit fee
+                pnl -= fee_per_contract * position.size
 
                 equity += pnl
                 equity_curve.append(equity)
@@ -368,7 +557,7 @@ if __name__ == "__main__":
 
     if len(signals) < 5:
         print("WARNING: Insufficient data for meaningful backtest.")
-        print("Need at least 5 tickers with 3+ snapshots each.")
+        print("Need at least 5 tickers with 2+ snapshots each.")
         print(f"Current: {len(signals)} tickers with sufficient history")
         print("Run the pipeline daily to accumulate data.")
         exit(0)
@@ -377,6 +566,11 @@ if __name__ == "__main__":
         (momentum_strategy, "Momentum Strategy"),
         (mean_reversion_strategy, "Mean Reversion Strategy"),
         (combined_strategy, "Combined Momentum+MeanReversion"),
+        (penny_momentum_strategy, "Penny Momentum"),
+        (naive_momentum_strategy, "Naive Momentum"),
+        (event_driven_strategy, "Event Driven"),
+        (spread_mean_reversion_strategy, "Spread Mean Reversion"),
+        (volume_breakout_strategy, "Volume Breakout"),
     ]
 
     for strat, name in strategies:

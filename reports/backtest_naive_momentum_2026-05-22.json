@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Naive Momentum",
+  "start_date": "2026-05-22",
+  "end_date": "2026-05-22",
+  "total_trades": 73,
+  "winning_trades": 2,
+  "losing_trades": 71,
+  "total_pnl": -58.4,
+  "max_drawdown": 0.066,
+  "sharpe_ratio": -0.0727,
+  "win_rate": 0.0274,
+  "avg_trade_pnl": 0.2,
+  "equity_curve_length": 147
+}

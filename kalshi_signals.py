@@ -5,11 +5,13 @@ Computes technical indicators from Kalshi prediction-market price history.
 Designed for binary event contracts (yes/no markets priced in dollars).
 
 Indicators:
-- Momentum: price velocity over N snapshots
+- Momentum: price velocity over N snapshots (percentage)
+- Absolute momentum: raw dollar change over N snapshots
 - Volatility: rolling standard deviation of mid-price
 - Volume anomaly: z-score of volume vs rolling mean
 - Mean reversion: deviation from rolling mean
 - Trend strength: consecutive same-direction moves
+- Spread: bid-ask spread for liquidity filtering
 """
 
 import sqlite3
@@ -46,13 +48,16 @@ class Signal:
     ticker: str
     fetched_at: str
     mid_price: Optional[float]
-    momentum_3: Optional[float]      # price change over last 3 snapshots
-    momentum_5: Optional[float]      # price change over last 5 snapshots
-    volatility_5: Optional[float]    # rolling std dev of mid-price
-    volume_zscore_5: Optional[float] # volume anomaly
+    spread: Optional[float]           # bid-ask spread
+    momentum_3: Optional[float]       # price change over last 3 snapshots (pct)
+    momentum_5: Optional[float]       # price change over last 5 snapshots (pct)
+    abs_momentum_1: Optional[float]   # raw dollar change over last 1 snapshot
+    abs_momentum_3: Optional[float]   # raw dollar change over last 3 snapshots
+    volatility_5: Optional[float]     # rolling std dev of mid-price
+    volume_zscore_5: Optional[float]  # volume anomaly
     mean_reversion_5: Optional[float] # deviation from 5-period mean
-    trend_strength: Optional[int]    # consecutive same-direction moves
-    signal_score: Optional[float]    # composite signal (-1 to +1)
+    trend_strength: Optional[int]     # consecutive same-direction moves
+    signal_score: Optional[float]     # composite signal (-1 to +1)
 
 
 def load_snapshots(db_path: str, ticker: Optional[str] = None) -> List[MarketSnapshot]:
@@ -100,6 +105,15 @@ def compute_momentum(prices: List[float], window: int) -> Optional[float]:
     if prev == 0:
         return None
     return (curr - prev) / prev
+
+
+def compute_abs_momentum(prices: List[float], window: int) -> Optional[float]:
+    """Raw dollar change: current - N periods ago."""
+    if len(prices) < window + 1:
+        return None
+    prev = prices[-(window + 1)]
+    curr = prices[-1]
+    return curr - prev
 
 
 def compute_volatility(prices: List[float], window: int) -> Optional[float]:
@@ -226,8 +240,11 @@ def extract_signals_for_ticker(snapshots: List[MarketSnapshot]) -> List[Signal]:
             ticker=snap.ticker,
             fetched_at=snap.fetched_at,
             mid_price=mp,
+            spread=snap.spread,
             momentum_3=compute_momentum(prices, 3) if len(prices) >= 4 else compute_momentum(prices, 1),
             momentum_5=compute_momentum(prices, 5) if len(prices) >= 6 else None,
+            abs_momentum_1=compute_abs_momentum(prices, 1) if len(prices) >= 2 else None,
+            abs_momentum_3=compute_abs_momentum(prices, 3) if len(prices) >= 4 else None,
             volatility_5=compute_volatility(prices, 5) if len(prices) >= 5 else compute_volatility(prices, 2),
             volume_zscore_5=compute_volume_zscore(volumes, 5) if len(volumes) >= 5 else compute_volume_zscore(volumes, 2),
             mean_reversion_5=compute_mean_reversion(prices, 5) if len(prices) >= 5 else compute_mean_reversion(prices, 2),
@@ -255,7 +272,7 @@ def extract_all_signals(db_path: str) -> Dict[str, List[Signal]]:
 
     signals_by_ticker = {}
     for ticker, snaps in by_ticker.items():
-        if len(snaps) >= 2:  # Minimum for basic momentum (was 3, adjusted for sparse data)
+        if len(snaps) >= 2:  # Minimum for basic momentum
             signals_by_ticker[ticker] = extract_signals_for_ticker(snaps)
 
     return signals_by_ticker
@@ -281,11 +298,13 @@ if __name__ == "__main__":
     for s in top:
         mom3_str = f"{s.momentum_3:+.3f}" if s.momentum_3 is not None else "N/A"
         mom5_str = f"{s.momentum_5:+.3f}" if s.momentum_5 is not None else "N/A"
+        abs1_str = f"{s.abs_momentum_1:+.3f}" if s.abs_momentum_1 is not None else "N/A"
         vol_str = f"{s.volatility_5:.4f}" if s.volatility_5 is not None else "N/A"
         vol_z_str = f"{s.volume_zscore_5:+.2f}" if s.volume_zscore_5 is not None else "N/A"
         mr_str = f"{s.mean_reversion_5:+.3f}" if s.mean_reversion_5 is not None else "N/A"
         trend_str = str(s.trend_strength) if s.trend_strength is not None else "N/A"
+        spread_str = f"{s.spread:.3f}" if s.spread is not None else "N/A"
         print(f"{s.ticker}: score={s.signal_score:+.3f} | "
-              f"mom3={mom3_str} | mom5={mom5_str} | "
+              f"mom3={mom3_str} | abs1={abs1_str} | spread={spread_str} | "
               f"vol={vol_str} | vol_z={vol_z_str} | "
               f"mr={mr_str} | trend={trend_str}")

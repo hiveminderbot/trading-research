@@ -1,44 +1,45 @@
 # Kalshi Daily Market Report — 2026-05-22
 
-**Run at:** 2026-05-22T17:02:51.841054+00:00  
-**Total unique markets in DB:** 38754  
-**Markets in this run:** 2513  
+**Run at:** 2026-05-22T17:36:30.509378+00:00  
+**Total unique markets in DB:** 40145  
+**Markets in this run:** 2584  
 
 ## Top 10 Markets by Volume
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume | 24h Volume | Open Interest |
 |--------|-------|---------|---------|--------|-----------|---------------|
-| KXMVESPORTSMULTIGAMEEXTENDED-S2026E7200038534-E94843FFEDA | yes Vallecano,yes Getafe,yes Sevilla,yes Real Madr | 0.0 | 0.032 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S20267AB50032366-D8546AFF23C | no San Antonio wins by over 10.5 points,yes COL Av | 0.0 | 0.168 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S202686FD624DD39-A7522853E1F | yes St. Louis,yes Baltimore,yes Atlanta,yes Los An | 0.0 | 0.037 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S20261A9169E684D-CE810ACC9A6 | yes Aaron Judge: 1+,yes Jameson Taillon: 4+,yes Sp | 0.0 | 0.0 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S2026DBA57C46574-2E0FA7D581C | yes Jameson Taillon: 5+,yes Spencer Arrighetti: 4+ | 0.0 | 0.36 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026BF910C10ABD-41C94397A30 | no San Antonio wins by over 10.5 points,yes COL Av | 0.0 | 0.298 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026363B421F1F9-F2B2417657D | yes Philadelphia,yes Matt Olson: 2+,yes CJ Abrams: | 0.0 | 0.625 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S202691DBBC86A32-16E13360E3E | yes Sunrisers Hyderabad,yes Spencer Arrighetti: 3+ | 0.0 | 0.0 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S202663E75EBE431-335EF89EC3B | yes Chicago C,yes San Antonio,yes COL Avalanche,ye | 0.0 | 0.011 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S2026D44D0EB4174-1678190C044 | yes Cleveland,yes Victor Wembanyama: 1+,yes San An | 0.0 | 0.083 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S20268694408B0E3-B1EFB54F248 | yes Philadelphia,yes Toronto,yes Atlanta,yes VGK G | 0.0 | 0.098 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S2026142BB7334C0-3FED87AE17B | yes Chicago C,yes Philadelphia,yes Pittsburgh,yes  | 0.0 | 0.011 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S2026FE6196D3381-6E8B06BB63B | yes Jameson Taillon: 2+,yes Spencer Arrighetti: 3+ | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S20267FBEE1F5050-4486997D45A | yes Jameson Taillon: 2+,yes Gavin Williams: 4+,yes | 0.0 | 0.791 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S2026DAFE81F72E2-0F5C7173921 | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S2026FB7ACD87DD6-D0711715B6A | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S2026007E2C07E63-0D11FDE6F91 | yes San Antonio,yes VGK Golden Knights,yes Connect | 0.0 | 0.066 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S20260640E4EFBAA-DE438963DB6 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 0.151 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S2026876CA5A805D-81F8D8E6404 | yes Jordan Spieth,yes Mac Meissner,yes Sungjae Im, | 0.0 | 0.592 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S202663CEAC30E94-0FB34A0D8BB | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
 
 ## Top 15 Price Movers (vs previous snapshot)
 
 | Ticker | Title | Prev Bid | Curr Bid | Change % | Volume |
 |--------|-------|----------|----------|----------|--------|
-| KXATPMATCH-26MAY25CINOPE-CIN | Will Federico Cina win the Cina vs Opelka: Ro | 0.06 | 0.06 | +0.0% | 0 |
+| KXMVESPORTSMULTIGAMEEXTENDED-S202604066C9B198-90AF8087BE3 | yes Atlanta,yes San Diego,yes Arizona,yes Spe | 0.073 | 0.0 | -100.0% | 0 |
+| KXATPMATCH-26MAY25CINOPE-CIN | Will Federico Cina win the Cina vs Opelka: Ro | 0.06 | 0.07 | +16.7% | 0 |
 
 ## New Markets (first appearance)
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume |
 |--------|-------|---------|---------|--------|
-| KXATPEXACTMATCH-26MAY25CINOPE-CIN30 | Will Federico Cina win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPEXACTMATCH-26MAY25CINOPE-CIN31 | Will Federico Cina win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPEXACTMATCH-26MAY25CINOPE-CIN32 | Will Federico Cina win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPEXACTMATCH-26MAY25CINOPE-OPE30 | Will Reilly Opelka win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPEXACTMATCH-26MAY25CINOPE-OPE31 | Will Reilly Opelka win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPEXACTMATCH-26MAY25CINOPE-OPE32 | Will Reilly Opelka win the Federico Cina vs Reilly | 0.0 | 0.0 | 0 |
-| KXATPSETWINNER-26MAY25CINOPE-1-CIN | Will Federico Cina win set 1 in the Federico Cina  | 0.0 | 0.0 | 0 |
-| KXATPSETWINNER-26MAY25CINOPE-1-OPE | Will Reilly Opelka win set 1 in the Federico Cina  | 0.0 | 0.0 | 0 |
-| KXATPSETWINNER-26MAY25CINOPE-2-CIN | Will Federico Cina win set 2 in the Federico Cina  | 0.0 | 0.0 | 0 |
-| KXATPSETWINNER-26MAY25CINOPE-2-OPE | Will Reilly Opelka win set 2 in the Federico Cina  | 0.0 | 0.0 | 0 |
+| KXMVECROSSCATEGORY-S202600722AC1907-33EC0BC9C45 | yes Atlanta,yes San Antonio,yes VGK Golden Knights | 0.0 | 1.0 | 0 |
+| KXMVECROSSCATEGORY-S2026019C4B6C8A7-7A6A4E888E0 | yes Alex Bregman: 1+,yes Christian Walker: 1+,yes  | 0.0 | 0.0 | 0 |
+| KXMVECROSSCATEGORY-S20260207DDCDC6E-F2F5AD60BB4 | yes Elly De La Cruz: 1+,yes Ronald Acuña Jr.: 1+,y | 0.0 | 0.0 | 0 |
+| KXMVECROSSCATEGORY-S202603E4F9F1B18-09168A63AD9 | yes Spencer Arrighetti: 3+,yes Gavin Williams: 4+, | 0.0 | 0.0 | 0 |
+| KXMVECROSSCATEGORY-S202604C21E5CFD6-6768AD76301 | yes Spencer Arrighetti: 5+,yes Cristopher Sánchez: | 0.0 | 1.0 | 0 |
+| KXMVECROSSCATEGORY-S20260529AB8B8EC-1A51FED3F75 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 1.0 | 0 |
+| KXMVECROSSCATEGORY-S202606A5A37477E-7198DD286DC | yes Oklahoma City,yes New York,yes Shai Gilgeous-A | 0.0 | 1.0 | 0 |
+| KXMVECROSSCATEGORY-S202606F778F70D2-011E2B35CA1 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 0.0 | 0 |
+| KXMVECROSSCATEGORY-S20260709BDD7C30-7C7DFED8E8F | yes Oklahoma City,yes Brooks Koepka,yes Victoria M | 0.0 | 1.0 | 0 |
+| KXMVECROSSCATEGORY-S202609410275C01-37628DBBA08 | yes Houston,yes New York Y,yes VGK Golden Knights | 0.0 | 1.0 | 0 |
 
 ---
 *Generated by Kalshi Daily Runner*
