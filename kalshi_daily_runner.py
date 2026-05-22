@@ -124,12 +124,12 @@ def normalize_market(m):
         "title": m.get("title"),
         "series_ticker": m.get("series_ticker"),
         "status": m.get("status"),
-        "yes_bid": safe_float(m.get("yes_bid")),
-        "yes_ask": safe_float(m.get("yes_ask")),
-        "no_bid": safe_float(m.get("no_bid")),
-        "no_ask": safe_float(m.get("no_ask")),
-        "volume_fp": safe_float(m.get("volume_fp")),
-        "open_interest": safe_float(m.get("open_interest")),
+        "yes_bid": safe_float(m.get("yes_bid") if m.get("yes_bid") is not None else m.get("yes_bid_dollars")),
+        "yes_ask": safe_float(m.get("yes_ask") if m.get("yes_ask") is not None else m.get("yes_ask_dollars")),
+        "no_bid": safe_float(m.get("no_bid") if m.get("no_bid") is not None else m.get("no_bid_dollars")),
+        "no_ask": safe_float(m.get("no_ask") if m.get("no_ask") is not None else m.get("no_ask_dollars")),
+        "volume_fp": safe_float(m.get("volume_fp") if m.get("volume_fp") is not None else m.get("volume_24h_fp")),
+        "open_interest": safe_float(m.get("open_interest") if m.get("open_interest") is not None else m.get("open_interest_fp")),
         "expiration_date": m.get("expiration_date"),
     }
 
