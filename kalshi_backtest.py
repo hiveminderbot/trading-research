@@ -214,6 +214,38 @@ def penny_momentum_strategy(signals: List[Signal], position: Optional[Position])
     return 'HOLD'
 
 
+# ── Strategy: Pair Snapshot (lookahead entry for sparse 2-snapshot data) ────
+
+def pair_snapshot_strategy(signals: List[Signal], position: Optional[Position], idx: int = 0, total: int = 0, full_signals: Optional[List[Signal]] = None) -> str:
+    """
+    Pair-snapshot strategy for extremely sparse data (2 snapshots per ticker):
+    - Enters at snapshot 1, exits at snapshot 2
+    - Uses the price change direction to choose side
+    - This is a demonstration strategy for sparse data only
+    """
+    if not signals or total < 2:
+        return 'HOLD'
+
+    if position:
+        # Close at the last snapshot
+        if idx == total - 1:
+            return 'CLOSE'
+        return 'HOLD'
+
+    # Enter at the first snapshot
+    if idx == 0:
+        # Look at the next snapshot's price vs current to decide side
+        current = signals[0].mid_price
+        next_price = signals[1].mid_price if len(signals) > 1 else current
+        if current is not None and next_price is not None:
+            if next_price > current:
+                return 'BUY_YES'
+            elif next_price < current:
+                return 'BUY_NO'
+
+    return 'HOLD'
+
+
 # ── Strategy: Naive Momentum (permissive, for sparse data) ──────────────────
 
 def naive_momentum_strategy(signals: List[Signal], position: Optional[Position]) -> str:
@@ -381,7 +413,20 @@ def run_backtest(
         position: Optional[Position] = None
 
         for i, sig in enumerate(signals):
-            action = strategy(signals[:i+1], position)
+            # Check if strategy supports idx/total/full_signals args
+            import inspect
+            sig_params = inspect.signature(strategy).parameters
+            kwargs = {}
+            if 'idx' in sig_params:
+                kwargs['idx'] = i
+            if 'total' in sig_params:
+                kwargs['total'] = len(signals)
+            if 'full_signals' in sig_params:
+                kwargs['full_signals'] = signals
+            if kwargs:
+                action = strategy(signals[:i+1], position, **kwargs)
+            else:
+                action = strategy(signals[:i+1], position)
 
             if action == 'BUY_YES' and not position and sig.mid_price is not None:
                 position = Position(
@@ -433,10 +478,11 @@ def run_backtest(
                 ))
                 position = None
 
-        # Close any open position at end of data
+        # Close any open position at end of data, but skip if opened on final snapshot
         if position and signals:
             last_sig = signals[-1]
-            if last_sig.mid_price is not None:
+            # Skip if position was opened on the last snapshot (would be same-price close)
+            if last_sig.mid_price is not None and position.entry_time != last_sig.fetched_at:
                 exit_price = last_sig.mid_price if position.side == 'YES' else 1.0 - last_sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
                 # Exit fee
@@ -571,6 +617,7 @@ if __name__ == "__main__":
         (event_driven_strategy, "Event Driven"),
         (spread_mean_reversion_strategy, "Spread Mean Reversion"),
         (volume_breakout_strategy, "Volume Breakout"),
+        (pair_snapshot_strategy, "Pair Snapshot"),
     ]
 
     for strat, name in strategies:

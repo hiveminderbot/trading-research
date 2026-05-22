@@ -67,16 +67,16 @@ def load_snapshots(db_path: str, ticker: Optional[str] = None) -> List[MarketSna
 
     if ticker:
         c.execute("""
-            SELECT ticker, title, yes_bid, yes_ask, volume_fp, fetched_at
+            SELECT ticker, title, yes_bid_dollars, yes_ask_dollars, volume_fp, fetched_at
             FROM market_snapshots
-            WHERE ticker = ? AND yes_bid IS NOT NULL
+            WHERE ticker = ? AND yes_bid_dollars IS NOT NULL AND yes_bid_dollars != 0
             ORDER BY fetched_at
         """, (ticker,))
     else:
         c.execute("""
-            SELECT ticker, title, yes_bid, yes_ask, volume_fp, fetched_at
+            SELECT ticker, title, yes_bid_dollars, yes_ask_dollars, volume_fp, fetched_at
             FROM market_snapshots
-            WHERE yes_bid IS NOT NULL
+            WHERE yes_bid_dollars IS NOT NULL AND yes_bid_dollars != 0
             ORDER BY ticker, fetched_at
         """)
 
