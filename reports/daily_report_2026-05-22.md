@@ -1,45 +1,43 @@
 # Kalshi Daily Market Report — 2026-05-22
 
-**Run at:** 2026-05-22T17:36:30.509378+00:00  
-**Total unique markets in DB:** 40145  
-**Markets in this run:** 2584  
+**Run at:** 2026-05-22T20:59:53.334895+00:00  
+**Total unique markets in DB:** 42585  
+**Markets in this run:** 2440  
 
 ## Top 10 Markets by Volume
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume | 24h Volume | Open Interest |
 |--------|-------|---------|---------|--------|-----------|---------------|
-| KXMVESPORTSMULTIGAMEEXTENDED-S20268694408B0E3-B1EFB54F248 | yes Philadelphia,yes Toronto,yes Atlanta,yes VGK G | 0.0 | 0.098 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S2026142BB7334C0-3FED87AE17B | yes Chicago C,yes Philadelphia,yes Pittsburgh,yes  | 0.0 | 0.011 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026FE6196D3381-6E8B06BB63B | yes Jameson Taillon: 2+,yes Spencer Arrighetti: 3+ | 0.0 | 0.0 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S20267FBEE1F5050-4486997D45A | yes Jameson Taillon: 2+,yes Gavin Williams: 4+,yes | 0.0 | 0.791 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026DAFE81F72E2-0F5C7173921 | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026FB7ACD87DD6-D0711715B6A | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S2026007E2C07E63-0D11FDE6F91 | yes San Antonio,yes VGK Golden Knights,yes Connect | 0.0 | 0.066 | 0 | N/A | N/A |
-| KXMVESPORTSMULTIGAMEEXTENDED-S20260640E4EFBAA-DE438963DB6 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 0.151 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S2026876CA5A805D-81F8D8E6404 | yes Jordan Spieth,yes Mac Meissner,yes Sungjae Im, | 0.0 | 0.592 | 0 | N/A | N/A |
-| KXMVECROSSCATEGORY-S202663CEAC30E94-0FB34A0D8BB | yes Jameson Taillon: 2+,yes Cristopher Sánchez: 4+ | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S202648822C8598A-9274AFB3A4B | yes Gavin Williams: 5+,yes Cristopher Sánchez: 5+, | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S202668BE3F3DA6F-4900116D091 | yes Gavin Williams: 5+,yes Cristopher Sánchez: 5+, | 0.0 | 0.0 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S20260DE24EBFD50-4DE1F84A4EC | yes San Antonio wins by over 2.5 points,no Clevela | 0.0 | 0.056 | 0 | N/A | N/A |
+| KXMVECROSSCATEGORY-S202628832DBF498-739E0E7590A | yes San Antonio wins by over 2.5 points,yes VGK Go | 0.0 | 0.186 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S2026A97174F4713-34AC2DCB917 | yes San Antonio,yes Devin Vassell: 10+,yes Stephon | 0.0 | 0.075 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S2026292BB486B15-E1E08386FEF | yes Philadelphia,yes Atlanta,yes Gavin Williams: 5 | 0.0 | 0.397 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S20265550761F78E-5BDE2802564 | yes Gavin Williams: 5+,yes Cristopher Sánchez: 5+, | 0.0 | 0.852 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S202612E91F76DAE-D9AC2D0868C | yes Over 200.5 points scored,yes Over 198.5 points | 0.0 | 0.025 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S20265292DEDBBB4-9D1F152CB11 | yes Gavin Williams: 5+,yes Cristopher Sánchez: 5+, | 0.0 | 1.0 | 0 | N/A | N/A |
+| KXMVESPORTSMULTIGAMEEXTENDED-S2026FC08D4FDC9A-68D8C9E57E2 | yes José Ramírez: 1+,yes Eury Pérez: 5+,yes Davis  | 0.0 | 1.0 | 0 | N/A | N/A |
 
 ## Top 15 Price Movers (vs previous snapshot)
 
 | Ticker | Title | Prev Bid | Curr Bid | Change % | Volume |
 |--------|-------|----------|----------|----------|--------|
-| KXMVESPORTSMULTIGAMEEXTENDED-S202604066C9B198-90AF8087BE3 | yes Atlanta,yes San Diego,yes Arizona,yes Spe | 0.073 | 0.0 | -100.0% | 0 |
-| KXATPMATCH-26MAY25CINOPE-CIN | Will Federico Cina win the Cina vs Opelka: Ro | 0.06 | 0.07 | +16.7% | 0 |
 
 ## New Markets (first appearance)
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume |
 |--------|-------|---------|---------|--------|
-| KXMVECROSSCATEGORY-S202600722AC1907-33EC0BC9C45 | yes Atlanta,yes San Antonio,yes VGK Golden Knights | 0.0 | 1.0 | 0 |
-| KXMVECROSSCATEGORY-S2026019C4B6C8A7-7A6A4E888E0 | yes Alex Bregman: 1+,yes Christian Walker: 1+,yes  | 0.0 | 0.0 | 0 |
-| KXMVECROSSCATEGORY-S20260207DDCDC6E-F2F5AD60BB4 | yes Elly De La Cruz: 1+,yes Ronald Acuña Jr.: 1+,y | 0.0 | 0.0 | 0 |
-| KXMVECROSSCATEGORY-S202603E4F9F1B18-09168A63AD9 | yes Spencer Arrighetti: 3+,yes Gavin Williams: 4+, | 0.0 | 0.0 | 0 |
-| KXMVECROSSCATEGORY-S202604C21E5CFD6-6768AD76301 | yes Spencer Arrighetti: 5+,yes Cristopher Sánchez: | 0.0 | 1.0 | 0 |
-| KXMVECROSSCATEGORY-S20260529AB8B8EC-1A51FED3F75 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 1.0 | 0 |
-| KXMVECROSSCATEGORY-S202606A5A37477E-7198DD286DC | yes Oklahoma City,yes New York,yes Shai Gilgeous-A | 0.0 | 1.0 | 0 |
-| KXMVECROSSCATEGORY-S202606F778F70D2-011E2B35CA1 | yes Jameson Taillon: 3+,yes Spencer Arrighetti: 3+ | 0.0 | 0.0 | 0 |
-| KXMVECROSSCATEGORY-S20260709BDD7C30-7C7DFED8E8F | yes Oklahoma City,yes Brooks Koepka,yes Victoria M | 0.0 | 1.0 | 0 |
-| KXMVECROSSCATEGORY-S202609410275C01-37628DBBA08 | yes Houston,yes New York Y,yes VGK Golden Knights | 0.0 | 1.0 | 0 |
+| KXEUROLEAGUEGAME-26MAY241400RMAOPI-OPI | Real Madrid vs BC Olympiakos Piraeus Winner? | 0.67 | 0.8 | 0 |
+| KXEUROLEAGUEGAME-26MAY241400RMAOPI-RMA | Real Madrid vs BC Olympiakos Piraeus Winner? | 0.23 | 0.77 | 0 |
+| KXITFWMATCH-26MAY23METHAG-HAG | Will Madelief Hageman win the Mettraux vs Hageman: | 0.27 | 0.56 | 0 |
+| KXITFWMATCH-26MAY23METHAG-MET | Will Marie Mettraux win the Mettraux vs Hageman: W | 0.44 | 0.73 | 0 |
+| KXMLBHIT-26MAY221910NYMMIA-MIAERUIZ3-1 | Esteury Ruiz: 1+ hits? | 0.55 | 0.57 | 0 |
+| KXMLBHIT-26MAY221910NYMMIA-MIAERUIZ3-2 | Esteury Ruiz: 2+ hits? | 0.14 | 0.2 | 0 |
+| KXMLBHIT-26MAY221910NYMMIA-MIAERUIZ3-3 | Esteury Ruiz: 3+ hits? | 0.0 | 0.05 | 0 |
+| KXMLBHIT-26MAY221915DETBAL-DETHLEE50-1 | Hao-Yu Lee: 1+ hits? | 0.48 | 0.52 | 0 |
+| KXMLBHIT-26MAY221915DETBAL-DETHLEE50-2 | Hao-Yu Lee: 2+ hits? | 0.1 | 0.15 | 0 |
+| KXMLBHIT-26MAY221915DETBAL-DETHLEE50-3 | Hao-Yu Lee: 3+ hits? | 0.0 | 0.03 | 0 |
 
 ---
 *Generated by Kalshi Daily Runner*
