@@ -628,3 +628,31 @@
 [2026-05-22T17:37:01.894580+00:00] New records: 2584, Changed prices: 49
 [2026-05-22T17:37:02.203098+00:00] Daily report written: reports/daily_report_2026-05-22.md
 [2026-05-22T17:37:02.214901+00:00] Pipeline complete.
+[2026-05-22T20:57:56.164603+00:00] ============================================================
+[2026-05-22T20:57:56.164767+00:00] Kalshi Daily Runner — 2026-05-22T20:57:56.164576+00:00
+[2026-05-22T20:57:56.241079+00:00] Exchange active: True
+[2026-05-22T20:57:56.473913+00:00] Bulk fetch page 0: 1000 markets, total=1000
+[2026-05-22T20:57:57.036534+00:00] Bulk fetch page 1: 1000 markets, total=2000
+[2026-05-22T20:57:57.618516+00:00] Bulk fetch page 2: 1000 markets, total=3000
+[2026-05-22T20:57:58.177104+00:00] Bulk fetch page 3: 1000 markets, total=4000
+[2026-05-22T20:57:58.818864+00:00] Bulk fetch page 4: 1000 markets, total=5000
+[2026-05-22T20:57:59.414387+00:00] Bulk fetch page 5: 1000 markets, total=6000
+[2026-05-22T20:58:00.277323+00:00] Bulk fetch page 6: 1000 markets, total=7000
+[2026-05-22T20:58:00.842877+00:00] Bulk fetch page 7: 1000 markets, total=8000
+[2026-05-22T20:58:01.425745+00:00] Bulk fetch page 8: 1000 markets, total=9000
+[2026-05-22T20:58:01.985779+00:00] Bulk fetch page 9: 1000 markets, total=10000
+[2026-05-22T20:58:02.573292+00:00] Bulk fetch page 10: 1000 markets, total=11000
+[2026-05-22T20:58:03.459654+00:00] Bulk fetch page 11: 1000 markets, total=12000
+[2026-05-22T20:58:04.030429+00:00] Bulk fetch page 12: 1000 markets, total=13000
+[2026-05-22T20:58:04.637120+00:00] Bulk fetch page 13: 1000 markets, total=14000
+[2026-05-22T20:58:05.233100+00:00] Bulk fetch page 14: 1000 markets, total=15000
+[2026-05-22T20:58:05.778826+00:00] Bulk fetch page 15: 1000 markets, total=16000
+[2026-05-22T20:58:06.365991+00:00] Bulk fetch page 16: 1000 markets, total=17000
+[2026-05-22T20:58:06.998540+00:00] Bulk fetch page 17: 1000 markets, total=18000
+[2026-05-22T20:58:07.574053+00:00] Bulk fetch page 18: 1000 markets, total=19000
+[2026-05-22T20:58:08.143713+00:00] Bulk fetch page 19: 1000 markets, total=20000
+[2026-05-22T20:58:08.733142+00:00] Bulk fetch page 20: 1000 markets, total=21000
+[2026-05-22T20:58:09.320286+00:00] Bulk fetch page 21: 1000 markets, total=22000
+[2026-05-22T20:58:09.947308+00:00] Bulk fetch page 22: 1000 markets, total=23000
+[2026-05-22T20:58:10.490058+00:00] Bulk fetch page 23: 1000 markets, total=24000
+[2026-05-22T20:58:11.064044+00:00] Bulk fetch page 24: 1000 markets, total=25000
