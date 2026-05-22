@@ -1,20 +1,21 @@
 # Kalshi Backtest Report: Spread Mean Reversion
 
 **Period:** 2026-05-19 to 2026-05-19
-**Total Trades:** 0
+**Total Trades:** 1
 **Winning Trades:** 0
-**Losing Trades:** 0
+**Losing Trades:** 1
 **Win Rate:** 0.0%
-**Total PnL:** $-1.00
-**Avg Trade PnL:** $0.00
-**Max Drawdown:** 0.0%
-**Sharpe Ratio:** N/A
+**Total PnL:** $-2.00
+**Avg Trade PnL:** $-1.00
+**Max Drawdown:** 0.2%
+**Sharpe Ratio:** -1413.506
 
 ## Trade Log
 
 | Ticker | Action | Side | Price | Time | PnL |
 |--------|--------|------|-------|------|-----|
 | KXETH15M-26MAY191300-00 | OPEN | NO | 0.370 | 2026-05-19T16:50:17 | - |
+| KXETH15M-26MAY191300-00 | EXPIRE_SAME_SNAPSHOT | NO | 0.370 | 2026-05-19T16:50:17 | $-1.00 |
 
 ## Capital-Readiness Assessment
 

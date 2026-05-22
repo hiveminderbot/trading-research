@@ -1,21 +1,23 @@
 # Kalshi Backtest Report: Penny Momentum
 
 **Period:** 2026-05-19 to 2026-05-19
-**Total Trades:** 0
+**Total Trades:** 2
 **Winning Trades:** 0
-**Losing Trades:** 0
+**Losing Trades:** 2
 **Win Rate:** 0.0%
-**Total PnL:** $-2.00
-**Avg Trade PnL:** $0.00
-**Max Drawdown:** 0.0%
-**Sharpe Ratio:** -1413.506
+**Total PnL:** $-4.00
+**Avg Trade PnL:** $-1.00
+**Max Drawdown:** 0.4%
+**Sharpe Ratio:** -773.434
 
 ## Trade Log
 
 | Ticker | Action | Side | Price | Time | PnL |
 |--------|--------|------|-------|------|-----|
 | KXETH15M-26MAY191300-00 | OPEN | YES | 0.630 | 2026-05-19T16:50:17 | - |
+| KXETH15M-26MAY191300-00 | EXPIRE_SAME_SNAPSHOT | YES | 0.630 | 2026-05-19T16:50:17 | $-1.00 |
 | KXNASDAQ100-26MAY19H1600-B29050 | OPEN | NO | 0.855 | 2026-05-19T16:50:17 | - |
+| KXNASDAQ100-26MAY19H1600-B29050 | EXPIRE_SAME_SNAPSHOT | NO | 0.855 | 2026-05-19T16:50:17 | $-1.00 |
 
 ## Capital-Readiness Assessment
 

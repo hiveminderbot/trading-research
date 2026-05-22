@@ -223,7 +223,9 @@ def pair_snapshot_strategy(signals: List[Signal], position: Optional[Position], 
     - Uses the price change direction to choose side
     - This is a demonstration strategy for sparse data only
     """
-    if not signals or total < 2:
+    # Use full_signals for lookahead; fall back to signals if not provided
+    refs = full_signals if full_signals is not None else signals
+    if not refs or len(refs) < 2:
         return 'HOLD'
 
     if position:
@@ -235,8 +237,8 @@ def pair_snapshot_strategy(signals: List[Signal], position: Optional[Position], 
     # Enter at the first snapshot
     if idx == 0:
         # Look at the next snapshot's price vs current to decide side
-        current = signals[0].mid_price
-        next_price = signals[1].mid_price if len(signals) > 1 else current
+        current = refs[0].mid_price
+        next_price = refs[1].mid_price if len(refs) > 1 else current
         if current is not None and next_price is not None:
             if next_price > current:
                 return 'BUY_YES'
@@ -301,6 +303,110 @@ def event_driven_strategy(signals: List[Signal], position: Optional[Position]) -
             return 'BUY_YES'
         else:
             return 'BUY_NO'
+
+    return 'HOLD'
+
+
+# ── Strategy: Directional Bias (2-snapshot, no lookahead) ───────────────────
+
+def directional_bias_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Directional bias for 2-snapshot data without lookahead:
+    - At snapshot 1: buy YES if mid > 0.5 (market prices event as likely)
+    - At snapshot 1: buy NO if mid < 0.5 (market prices event as unlikely)
+    - Close at snapshot 2
+    - Skip if spread >= 0.10 or mid near extremes (<0.05 or >0.95)
+    """
+    if not signals:
+        return 'HOLD'
+
+    # Only enter on the first snapshot
+    if len(signals) == 1 and not position:
+        mid = signals[0].mid_price
+        spread = signals[0].spread
+        if mid is None or spread is None:
+            return 'HOLD'
+        if spread >= 0.10:
+            return 'HOLD'
+        if mid < 0.05 or mid > 0.95:
+            return 'HOLD'
+        if mid > 0.5:
+            return 'BUY_YES'
+        else:
+            return 'BUY_NO'
+
+    # Close on any subsequent snapshot
+    if position and len(signals) >= 2:
+        return 'CLOSE'
+
+    return 'HOLD'
+
+
+# ── Strategy: Contrarian (2-snapshot, no lookahead) ─────────────────────────
+
+def contrarian_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Contrarian strategy for 2-snapshot data without lookahead:
+    - At snapshot 1: buy NO if mid > 0.5 (bet against crowd)
+    - At snapshot 1: buy YES if mid < 0.5 (bet against crowd)
+    - Close at snapshot 2
+    """
+    if not signals:
+        return 'HOLD'
+
+    if len(signals) == 1 and not position:
+        mid = signals[0].mid_price
+        spread = signals[0].spread
+        if mid is None or spread is None:
+            return 'HOLD'
+        if spread >= 0.10:
+            return 'HOLD'
+        if mid < 0.05 or mid > 0.95:
+            return 'HOLD'
+        if mid > 0.5:
+            return 'BUY_NO'
+        else:
+            return 'BUY_YES'
+
+    if position and len(signals) >= 2:
+        return 'CLOSE'
+
+    return 'HOLD'
+
+
+# ── Strategy: Momentum Follower (2-snapshot, no lookahead) ──────────────────
+
+def momentum_follower_2snap_strategy(signals: List[Signal], position: Optional[Position]) -> str:
+    """
+    Momentum follower for 2-snapshot data without lookahead:
+    - Wait until snapshot 2 to see the move direction
+    - Enter in the direction of the move
+    - Close at snapshot 3 (if exists) or hold to end
+    This is a delayed-entry momentum strategy.
+    """
+    if not signals:
+        return 'HOLD'
+
+    # Need at least 2 snapshots to detect momentum
+    if len(signals) >= 2 and not position:
+        # Use the move from snapshot 1 to snapshot 2
+        prev_mid = signals[-2].mid_price
+        curr_mid = signals[-1].mid_price
+        spread = signals[-1].spread
+        if prev_mid is None or curr_mid is None or spread is None:
+            return 'HOLD'
+        if spread >= 0.10:
+            return 'HOLD'
+        if curr_mid < 0.05 or curr_mid > 0.95:
+            return 'HOLD'
+        move = curr_mid - prev_mid
+        if move > 0.005:  # At least 0.5 cent move up
+            return 'BUY_YES'
+        elif move < -0.005:  # At least 0.5 cent move down
+            return 'BUY_NO'
+
+    if position and len(signals) >= 3:
+        return 'CLOSE'
 
     return 'HOLD'
 
@@ -478,11 +584,10 @@ def run_backtest(
                 ))
                 position = None
 
-        # Close any open position at end of data, but skip if opened on final snapshot
+        # Close any open position at end of data
         if position and signals:
             last_sig = signals[-1]
-            # Skip if position was opened on the last snapshot (would be same-price close)
-            if last_sig.mid_price is not None and position.entry_time != last_sig.fetched_at:
+            if last_sig.mid_price is not None:
                 exit_price = last_sig.mid_price if position.side == 'YES' else 1.0 - last_sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
                 # Exit fee
@@ -494,13 +599,14 @@ def run_backtest(
                 drawdown = (peak_equity - equity) / peak_equity if peak_equity > 0 else 0
                 max_drawdown = max(max_drawdown, drawdown)
 
+                action_label = 'EXPIRE' if position.entry_time != last_sig.fetched_at else 'EXPIRE_SAME_SNAPSHOT'
                 trades.append(Trade(
-                    ticker=ticker, action='EXPIRE', side=position.side,
+                    ticker=ticker, action=action_label, side=position.side,
                     price=exit_price, time=last_sig.fetched_at, pnl=pnl
                 ))
 
     # Calculate metrics
-    closed_trades = [t for t in trades if t.action in ('CLOSE', 'EXPIRE')]
+    closed_trades = [t for t in trades if t.action in ('CLOSE', 'EXPIRE', 'EXPIRE_SAME_SNAPSHOT')]
     winning = len([t for t in closed_trades if t.pnl and t.pnl > 0])
     losing = len([t for t in closed_trades if t.pnl and t.pnl <= 0])
     total_pnl = equity - initial_capital
@@ -618,6 +724,9 @@ if __name__ == "__main__":
         (spread_mean_reversion_strategy, "Spread Mean Reversion"),
         (volume_breakout_strategy, "Volume Breakout"),
         (pair_snapshot_strategy, "Pair Snapshot"),
+        (directional_bias_strategy, "Directional Bias"),
+        (contrarian_strategy, "Contrarian"),
+        (momentum_follower_2snap_strategy, "Momentum Follower 2-Snap"),
     ]
 
     for strat, name in strategies:
