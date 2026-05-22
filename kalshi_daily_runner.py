@@ -84,6 +84,7 @@ def init_db():
 
 
 def get_financial_series():
+    """Kept for compatibility; bulk fetch no longer uses per-series calls."""
     keywords = [
         "FED", "RATE", "INFLATION", "GDP", "NASDAQ", "BTC", "ETH", "CPI",
         "UNEMPLOYMENT", "SPY", "SP500", "DOW", "OIL", "GOLD", "SILVER",
@@ -103,6 +104,7 @@ def get_financial_series():
 
 
 def get_markets_for_series(series_ticker):
+    """DEPRECATED: Use fetch_all_markets_bulk() instead to avoid rate limits."""
     markets = []
     cursor = None
     while True:
@@ -118,18 +120,63 @@ def get_markets_for_series(series_ticker):
     return markets
 
 
+def fetch_all_markets_bulk():
+    """
+    Fetch all markets via the bulk /markets endpoint with pagination.
+    This is ~100x faster than per-series fetching and avoids rate limits.
+    Returns a list of all market dicts.
+    """
+    all_markets = []
+    cursor = None
+    page = 0
+    while page < 50:
+        path = "/markets?limit=1000"
+        if cursor:
+            path += f"&cursor={cursor}"
+        data = fetch_json(path)
+        batch = data.get("markets", [])
+        all_markets.extend(batch)
+        cursor = data.get("cursor")
+        log(f"Bulk fetch page {page}: {len(batch)} markets, total={len(all_markets)}")
+        if not cursor or not batch:
+            break
+        time.sleep(0.3)
+        page += 1
+    return all_markets
+
+
+def filter_financial_markets(all_markets):
+    """Filter the full market list for financial/economic keywords."""
+    keywords = [
+        "FED", "RATE", "INFLATION", "GDP", "NASDAQ", "BTC", "ETH", "CPI",
+        "UNEMPLOYMENT", "SPY", "SP500", "DOW", "OIL", "GOLD", "SILVER",
+        "TREASURY", "BOND", "YIELD", "FOREX", "USD", "EUR", "GBP", "JPY"
+    ]
+    financial = []
+    for m in all_markets:
+        title = (m.get("title") or "").upper()
+        ticker = (m.get("ticker") or "").upper()
+        series = (m.get("series_ticker") or "").upper()
+        for kw in keywords:
+            if kw in title or kw in ticker or kw in series:
+                financial.append(m)
+                break
+    return financial
+
+
 def normalize_market(m):
+    """Normalize a market dict from the Kalshi API to DB schema."""
     return {
         "ticker": m.get("ticker"),
         "title": m.get("title"),
         "series_ticker": m.get("series_ticker"),
         "status": m.get("status"),
-        "yes_bid": safe_float(m.get("yes_bid") if m.get("yes_bid") is not None else m.get("yes_bid_dollars")),
-        "yes_ask": safe_float(m.get("yes_ask") if m.get("yes_ask") is not None else m.get("yes_ask_dollars")),
-        "no_bid": safe_float(m.get("no_bid") if m.get("no_bid") is not None else m.get("no_bid_dollars")),
-        "no_ask": safe_float(m.get("no_ask") if m.get("no_ask") is not None else m.get("no_ask_dollars")),
-        "volume_fp": safe_float(m.get("volume_fp") if m.get("volume_fp") is not None else m.get("volume_24h_fp")),
-        "open_interest": safe_float(m.get("open_interest") if m.get("open_interest") is not None else m.get("open_interest_fp")),
+        "yes_bid": safe_float(m.get("yes_bid_dollars")),
+        "yes_ask": safe_float(m.get("yes_ask_dollars")),
+        "no_bid": safe_float(m.get("no_bid_dollars")),
+        "no_ask": safe_float(m.get("no_ask_dollars")),
+        "volume_fp": safe_float(m.get("volume_24h_fp") if m.get("volume_24h_fp") is not None else m.get("volume_fp")),
+        "open_interest": safe_float(m.get("open_interest_fp") if m.get("open_interest_fp") is not None else m.get("open_interest")),
         "expiration_date": m.get("expiration_date"),
     }
 
@@ -293,6 +340,7 @@ def main():
     conn = init_db()
     error_msg = None
     all_markets = []
+    financial = []
     new_records = 0
     changed_prices = 0
     report_path = None
@@ -303,23 +351,12 @@ def main():
         if not status.get("exchange_active"):
             raise RuntimeError("Exchange is not active")
 
-        series = get_financial_series()
-        log(f"Financial series discovered: {len(series)}")
+        # Use bulk fetch instead of per-series to avoid rate limits
+        all_markets = fetch_all_markets_bulk()
+        financial = filter_financial_markets(all_markets)
+        log(f"Financial markets filtered: {len(financial)} / {len(all_markets)} total")
 
-        for s in series:
-            st = s.get("ticker")
-            if not st:
-                continue
-            try:
-                markets = get_markets_for_series(st)
-                all_markets.extend(markets)
-                time.sleep(0.5)  # polite pacing between series
-            except Exception as e:
-                log(f"Warning: failed to fetch markets for {st}: {e}")
-
-        log(f"Total markets fetched: {len(all_markets)}")
-
-        new_records, changed_prices = store_markets(conn, all_markets, run_at)
+        new_records, changed_prices = store_markets(conn, financial, run_at)
         log(f"New records: {new_records}, Changed prices: {changed_prices}")
 
         report_path = generate_daily_report(conn, run_at)
@@ -333,7 +370,7 @@ def main():
         c.execute("""
             INSERT INTO pipeline_runs (run_at, markets_fetched, new_records, changed_prices, error)
             VALUES (?, ?, ?, ?, ?)
-        """, (run_at, len(all_markets), new_records, changed_prices, error_msg))
+        """, (run_at, len(financial), new_records, changed_prices, error_msg))
         conn.commit()
         conn.close()
 

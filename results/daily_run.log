@@ -255,3 +255,267 @@
 [2026-05-19T19:07:18.950553+00:00] Rate limited (429), sleeping 2s...
 [2026-05-19T19:07:24.281482+00:00] Rate limited (429), sleeping 2s...
 [2026-05-19T19:07:28.576228+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:29:06.653094+00:00] ============================================================
+[2026-05-19T20:29:06.653230+00:00] Kalshi Daily Runner — 2026-05-19T20:29:06.653065+00:00
+[2026-05-19T20:29:06.834499+00:00] Exchange active: True
+[2026-05-19T20:29:07.640755+00:00] Financial series discovered: 846
+[2026-05-19T20:30:28.259349+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:30:33.643455+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:30:38.626774+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:30:44.883500+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:30:51.171024+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T20:31:00.730665+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T21:57:57.998551+00:00] ============================================================
+[2026-05-19T21:57:57.998714+00:00] Kalshi Daily Runner — 2026-05-19T21:57:57.998517+00:00
+[2026-05-19T21:57:58.126511+00:00] Exchange active: True
+[2026-05-19T21:57:58.765321+00:00] Financial series discovered: 846
+[2026-05-19T21:58:47.210945+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T21:58:54.666700+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T21:59:02.651593+00:00] ============================================================
+[2026-05-19T21:59:02.651773+00:00] Kalshi Daily Runner — 2026-05-19T21:59:02.651564+00:00
+[2026-05-19T21:59:02.706487+00:00] Exchange active: True
+[2026-05-19T21:59:03.435613+00:00] Financial series discovered: 846
+[2026-05-19T22:00:03.261914+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T22:00:05.371169+00:00] Rate limited (429), sleeping 3s...
+[2026-05-19T22:00:08.482547+00:00] Rate limited (429), sleeping 5s...
+[2026-05-19T22:00:14.210822+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T22:00:16.320398+00:00] Rate limited (429), sleeping 3s...
+[2026-05-19T22:00:19.431436+00:00] Rate limited (429), sleeping 5s...
+[2026-05-19T22:00:24.545629+00:00] Rate limited (429), sleeping 9s...
+[2026-05-19T23:11:21.928434+00:00] ============================================================
+[2026-05-19T23:11:21.928591+00:00] Kalshi Daily Runner — 2026-05-19T23:11:21.928403+00:00
+[2026-05-19T23:11:21.978981+00:00] Exchange active: True
+[2026-05-19T23:11:22.953976+00:00] Financial series discovered: 847
+[2026-05-19T23:12:26.197819+00:00] ============================================================
+[2026-05-19T23:12:26.198099+00:00] Kalshi Daily Runner — 2026-05-19T23:12:26.197771+00:00
+[2026-05-19T23:12:26.334857+00:00] Exchange active: True
+[2026-05-19T23:12:27.107732+00:00] Financial series discovered: 847
+[2026-05-19T23:13:39.370339+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:13:50.669523+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:14:03.609390+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:14:25.938911+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:14:36.373942+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:15:23.880072+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:17:40.003551+00:00] Rate limited (429), sleeping 2s...
+[2026-05-19T23:22:11.241669+00:00] Warning: failed to fetch markets for KXGGMCOMTVACTR: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:22:39.117946+00:00] Warning: failed to fetch markets for KXVANRATEWC: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:23:23.446683+00:00] Warning: failed to fetch markets for KXESPYNFL: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:24:06.198638+00:00] Warning: failed to fetch markets for TIKTOKCOURT: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:24:52.222853+00:00] Warning: failed to fetch markets for KXFEDERALCHARGE: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:25:42.772604+00:00] Warning: failed to fetch markets for KXESPYNHL: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:26:33.824681+00:00] Warning: failed to fetch markets for KXTRUMPGOLF: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:27:21.433074+00:00] Warning: failed to fetch markets for KXFEDWIKI: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:28:17.360756+00:00] Warning: failed to fetch markets for KXUKGDPMOM: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:29:13.082149+00:00] Warning: failed to fetch markets for KXTVSEASONRELEASETHELASTOFUS: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:30:16.350746+00:00] Warning: failed to fetch markets for KXMORTGAGERATE: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:31:14.839495+00:00] Warning: failed to fetch markets for KXCPIUSEDCAR: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:32:21.934196+00:00] Warning: failed to fetch markets for KXUELMOV: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:34:17.491500+00:00] Warning: failed to fetch markets for VANRATEWC: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:35:56.249751+00:00] Warning: failed to fetch markets for KXFRMMIN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:37:55.771536+00:00] Warning: failed to fetch markets for VANRATEMW: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:39:26.276019+00:00] Warning: failed to fetch markets for KXETHFORK: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:40:40.634700+00:00] Warning: failed to fetch markets for KXUSDJPYMIN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:41:45.049648+00:00] Warning: failed to fetch markets for KXSUSPENDGASTAX: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:43:23.418492+00:00] Warning: failed to fetch markets for KXGOVSHUTLENGTH: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:45:25.977311+00:00] Warning: failed to fetch markets for KXBONDBRITISH: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:49:07.750277+00:00] Warning: failed to fetch markets for KXWTIMIN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-19T23:54:11.632863+00:00] Warning: failed to fetch markets for KXBTCMAX100INAUG: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:06:08.311887+00:00] Warning: failed to fetch markets for CPIAR: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:08:37.755935+00:00] Warning: failed to fetch markets for KXUSDARSMIN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:12:15.618455+00:00] Warning: failed to fetch markets for KXCANUSTRIPS: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:15:09.359999+00:00] Warning: failed to fetch markets for 10Y3M: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:18:24.955856+00:00] Warning: failed to fetch markets for KXHEGSETH: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:19:19.469280+00:00] Warning: failed to fetch markets for KXFEDDECISION: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:22:08.666267+00:00] Warning: failed to fetch markets for KXUEL: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:24:57.621565+00:00] Warning: failed to fetch markets for KXSOLETHRATIO: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:27:17.881236+00:00] Warning: failed to fetch markets for KXUSDX: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:29:51.536271+00:00] Warning: failed to fetch markets for EURUSDMIN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:34:47.187223+00:00] Warning: failed to fetch markets for WTIW: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:40:36.627147+00:00] Warning: failed to fetch markets for KXGDPW: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:43:54.976010+00:00] Warning: failed to fetch markets for KXPOILIEVREOUT: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:48:44.758657+00:00] Warning: failed to fetch markets for GOVSHUTLENGTH: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:50:58.410932+00:00] Warning: failed to fetch markets for KXDOLLARFED: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:55:32.531657+00:00] Warning: failed to fetch markets for VCHAIR: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T00:59:44.352044+00:00] Warning: failed to fetch markets for KXMLBSS: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:02:39.251874+00:00] Warning: failed to fetch markets for KXGGSCREEN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:05:43.136045+00:00] Warning: failed to fetch markets for KXASSTSECTREASURY: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:16:21.072190+00:00] Warning: failed to fetch markets for KXUELSPREAD: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:26:47.018456+00:00] Warning: failed to fetch markets for KXGBP: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:34:38.958241+00:00] Warning: failed to fetch markets for KXCPIYOYBANK: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:39:17.460976+00:00] Warning: failed to fetch markets for KXCRUDEEXPORTBAN: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:46:38.841710+00:00] Warning: failed to fetch markets for KXEUROVISION: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T01:59:23.535087+00:00] Warning: failed to fetch markets for KXJAMESBOND: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T02:16:46.354027+00:00] Warning: failed to fetch markets for GDPUSMAX: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T05:09:36.987697+00:00] Warning: failed to fetch markets for AUDUSDH: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T12:17:13.778283+00:00] Warning: failed to fetch markets for KXRTSARAHSOIL: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-20T19:15:05.161292+00:00] Warning: failed to fetch markets for KXESPYDRIVER: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-21T04:05:19.810371+00:00] Warning: failed to fetch markets for KXLAUSDCLOSE: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-21T14:03:13.149643+00:00] Warning: failed to fetch markets for KXTARIFFRATEINDIA: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-22T00:42:07.974705+00:00] Warning: failed to fetch markets for KXSWIFTVSGOV: <urlopen error [Errno -3] Temporary failure in name resolution>
+[2026-05-22T09:54:43.206529+00:00] ============================================================
+[2026-05-22T09:54:43.207976+00:00] Kalshi Daily Runner — 2026-05-22T09:54:43.206494+00:00
+[2026-05-22T09:54:43.287706+00:00] Exchange active: True
+[2026-05-22T09:54:44.087172+00:00] Financial series discovered: 847
+[2026-05-22T09:55:48.013236+00:00] ============================================================
+[2026-05-22T09:55:48.013376+00:00] Kalshi Daily Runner — 2026-05-22T09:55:48.013213+00:00
+[2026-05-22T09:55:48.128746+00:00] Exchange active: True
+[2026-05-22T09:55:49.053762+00:00] Financial series discovered: 847
+[2026-05-22T13:15:03.053692+00:00] ============================================================
+[2026-05-22T13:15:03.053852+00:00] Kalshi Daily Runner — 2026-05-22T13:15:03.053660+00:00
+[2026-05-22T13:15:03.182546+00:00] Exchange active: True
+[2026-05-22T13:15:04.012115+00:00] Financial series discovered: 847
+[2026-05-22T13:15:22.712812+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:15:30.940692+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:15:39.277018+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:16:35.526392+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:16:39.638317+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:16:45.206049+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:17:00.755407+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:35:45.117936+00:00] ============================================================
+[2026-05-22T13:35:45.118097+00:00] Kalshi Daily Runner — 2026-05-22T13:35:45.117905+00:00
+[2026-05-22T13:35:45.352289+00:00] Exchange active: True
+[2026-05-22T13:35:46.423428+00:00] Financial series discovered: 847
+[2026-05-22T13:35:52.253592+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:35:58.786619+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:36:08.371379+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:36:12.347685+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:36:20.875886+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:36:49.477686+00:00] ============================================================
+[2026-05-22T13:36:49.477826+00:00] Kalshi Daily Runner — 2026-05-22T13:36:49.477660+00:00
+[2026-05-22T13:36:49.585500+00:00] Exchange active: True
+[2026-05-22T13:36:50.503215+00:00] Financial series discovered: 847
+[2026-05-22T13:57:50.099133+00:00] ============================================================
+[2026-05-22T13:57:50.099322+00:00] Kalshi Daily Runner — 2026-05-22T13:57:50.099095+00:00
+[2026-05-22T13:57:50.229799+00:00] Exchange active: True
+[2026-05-22T13:57:51.063731+00:00] Financial series discovered: 847
+[2026-05-22T13:59:29.529955+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:59:39.422316+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T13:59:48.961706+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:39:36.219715+00:00] ============================================================
+[2026-05-22T15:39:36.219893+00:00] Kalshi Daily Runner — 2026-05-22T15:39:36.219680+00:00
+[2026-05-22T15:39:36.298929+00:00] Exchange active: True
+[2026-05-22T15:39:36.960835+00:00] Financial series discovered: 847
+[2026-05-22T15:39:59.516466+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:40:06.141266+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:52:49.543359+00:00] ============================================================
+[2026-05-22T15:52:49.543495+00:00] Kalshi Daily Runner — 2026-05-22T15:52:49.543325+00:00
+[2026-05-22T15:52:49.626930+00:00] Exchange active: True
+[2026-05-22T15:52:50.439749+00:00] Financial series discovered: 847
+[2026-05-22T15:55:48.706305+00:00] ============================================================
+[2026-05-22T15:55:48.706510+00:00] Kalshi Daily Runner — 2026-05-22T15:55:48.706263+00:00
+[2026-05-22T15:55:48.788152+00:00] Exchange active: True
+[2026-05-22T15:55:49.685268+00:00] Financial series discovered: 847
+[2026-05-22T15:56:09.657123+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:56:18.546642+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:56:33.601606+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T15:56:39.807727+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:01:51.391748+00:00] ============================================================
+[2026-05-22T16:01:51.391925+00:00] Kalshi Daily Runner — 2026-05-22T16:01:51.391712+00:00
+[2026-05-22T16:01:51.526891+00:00] Exchange active: True
+[2026-05-22T16:01:52.328367+00:00] Financial series discovered: 847
+[2026-05-22T16:18:01.608812+00:00] ============================================================
+[2026-05-22T16:18:01.608992+00:00] Kalshi Daily Runner — 2026-05-22T16:18:01.608771+00:00
+[2026-05-22T16:18:01.755245+00:00] Exchange active: True
+[2026-05-22T16:18:02.693755+00:00] Financial series discovered: 847
+[2026-05-22T16:18:39.709966+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:18:48.171499+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:18:55.892922+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:19:00.993605+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:19:09.597895+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:22:34.055106+00:00] ============================================================
+[2026-05-22T16:22:34.055275+00:00] Kalshi Daily Runner — 2026-05-22T16:22:34.055068+00:00
+[2026-05-22T16:22:34.167420+00:00] Exchange active: True
+[2026-05-22T16:22:35.815018+00:00] Financial series discovered: 847
+[2026-05-22T16:23:52.461655+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:24:02.575963+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:24:10.214083+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:24:17.419432+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:26:01.436030+00:00] ============================================================
+[2026-05-22T16:26:01.436217+00:00] Kalshi Daily Runner — 2026-05-22T16:26:01.435992+00:00
+[2026-05-22T16:26:01.508661+00:00] Exchange active: True
+[2026-05-22T16:26:02.577518+00:00] Financial series discovered: 847
+[2026-05-22T16:26:10.408158+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:26:16.094726+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:26:22.398804+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:26:33.991631+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:26:39.912095+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:27:32.336932+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:27:39.141188+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:28:19.361634+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:28:25.477821+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:28:32.224697+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:28:39.137029+00:00] Warning: failed to fetch markets for KXBTCD: <urlopen error [Errno 104] Connection reset by peer>
+[2026-05-22T16:30:29.848882+00:00] ============================================================
+[2026-05-22T16:30:29.849081+00:00] Kalshi Daily Runner — 2026-05-22T16:30:29.848853+00:00
+[2026-05-22T16:30:29.902611+00:00] Exchange active: True
+[2026-05-22T16:30:30.867468+00:00] Financial series discovered: 847
+[2026-05-22T16:52:43.037364+00:00] ============================================================
+[2026-05-22T16:52:43.037539+00:00] Kalshi Daily Runner — 2026-05-22T16:52:43.037335+00:00
+[2026-05-22T16:52:43.116989+00:00] Exchange active: True
+[2026-05-22T16:52:44.295584+00:00] Financial series discovered: 847
+[2026-05-22T16:55:11.123073+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:55:27.564143+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:55:36.904253+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:55:40.174004+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:55:51.704954+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:55:59.016213+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:56:05.607381+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:56:10.140220+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T16:57:38.766582+00:00] Rate limited (429), sleeping 2s...
+[2026-05-22T17:02:51.841098+00:00] ============================================================
+[2026-05-22T17:02:51.841298+00:00] Kalshi Daily Runner — 2026-05-22T17:02:51.841054+00:00
+[2026-05-22T17:02:51.925229+00:00] Exchange active: True
+[2026-05-22T17:02:52.063304+00:00] Bulk fetch page 0: 1000 markets, total=1000
+[2026-05-22T17:02:52.627521+00:00] Bulk fetch page 1: 1000 markets, total=2000
+[2026-05-22T17:02:53.205791+00:00] Bulk fetch page 2: 1000 markets, total=3000
+[2026-05-22T17:02:53.775714+00:00] Bulk fetch page 3: 1000 markets, total=4000
+[2026-05-22T17:02:54.352448+00:00] Bulk fetch page 4: 1000 markets, total=5000
+[2026-05-22T17:02:55.380312+00:00] Bulk fetch page 5: 1000 markets, total=6000
+[2026-05-22T17:02:55.950274+00:00] Bulk fetch page 6: 1000 markets, total=7000
+[2026-05-22T17:02:56.520383+00:00] Bulk fetch page 7: 1000 markets, total=8000
+[2026-05-22T17:02:57.090740+00:00] Bulk fetch page 8: 1000 markets, total=9000
+[2026-05-22T17:02:57.659451+00:00] Bulk fetch page 9: 1000 markets, total=10000
+[2026-05-22T17:02:58.226552+00:00] Bulk fetch page 10: 1000 markets, total=11000
+[2026-05-22T17:02:58.841870+00:00] Bulk fetch page 11: 1000 markets, total=12000
+[2026-05-22T17:02:59.440525+00:00] Bulk fetch page 12: 1000 markets, total=13000
+[2026-05-22T17:03:00.004236+00:00] Bulk fetch page 13: 1000 markets, total=14000
+[2026-05-22T17:03:00.634267+00:00] Bulk fetch page 14: 1000 markets, total=15000
+[2026-05-22T17:03:01.220374+00:00] Bulk fetch page 15: 1000 markets, total=16000
+[2026-05-22T17:03:01.793957+00:00] Bulk fetch page 16: 1000 markets, total=17000
+[2026-05-22T17:03:02.392596+00:00] Bulk fetch page 17: 1000 markets, total=18000
+[2026-05-22T17:03:03.088812+00:00] Bulk fetch page 18: 1000 markets, total=19000
+[2026-05-22T17:03:03.874506+00:00] Bulk fetch page 19: 1000 markets, total=20000
+[2026-05-22T17:03:04.472904+00:00] Bulk fetch page 20: 1000 markets, total=21000
+[2026-05-22T17:03:05.041337+00:00] Bulk fetch page 21: 1000 markets, total=22000
+[2026-05-22T17:03:05.622385+00:00] Bulk fetch page 22: 1000 markets, total=23000
+[2026-05-22T17:03:06.172547+00:00] Bulk fetch page 23: 1000 markets, total=24000
+[2026-05-22T17:03:06.787823+00:00] Bulk fetch page 24: 1000 markets, total=25000
+[2026-05-22T17:03:07.340882+00:00] Bulk fetch page 25: 1000 markets, total=26000
+[2026-05-22T17:03:07.935729+00:00] Bulk fetch page 26: 1000 markets, total=27000
+[2026-05-22T17:03:08.492812+00:00] Bulk fetch page 27: 1000 markets, total=28000
+[2026-05-22T17:03:09.041323+00:00] Bulk fetch page 28: 1000 markets, total=29000
+[2026-05-22T17:03:09.611077+00:00] Bulk fetch page 29: 1000 markets, total=30000
+[2026-05-22T17:03:10.169878+00:00] Bulk fetch page 30: 1000 markets, total=31000
+[2026-05-22T17:03:10.751216+00:00] Bulk fetch page 31: 1000 markets, total=32000
+[2026-05-22T17:03:11.321616+00:00] Bulk fetch page 32: 1000 markets, total=33000
+[2026-05-22T17:03:11.909796+00:00] Bulk fetch page 33: 1000 markets, total=34000
+[2026-05-22T17:03:12.468633+00:00] Bulk fetch page 34: 1000 markets, total=35000
+[2026-05-22T17:03:13.030980+00:00] Bulk fetch page 35: 1000 markets, total=36000
+[2026-05-22T17:03:13.612933+00:00] Bulk fetch page 36: 1000 markets, total=37000
+[2026-05-22T17:03:14.481980+00:00] Bulk fetch page 37: 1000 markets, total=38000
+[2026-05-22T17:03:15.054105+00:00] Bulk fetch page 38: 1000 markets, total=39000
+[2026-05-22T17:03:15.620050+00:00] Bulk fetch page 39: 1000 markets, total=40000
+[2026-05-22T17:03:16.181304+00:00] Bulk fetch page 40: 1000 markets, total=41000
+[2026-05-22T17:03:16.753960+00:00] Bulk fetch page 41: 1000 markets, total=42000
+[2026-05-22T17:03:17.454583+00:00] Bulk fetch page 42: 1000 markets, total=43000
+[2026-05-22T17:03:18.006765+00:00] Bulk fetch page 43: 1000 markets, total=44000
+[2026-05-22T17:03:18.569901+00:00] Bulk fetch page 44: 1000 markets, total=45000
+[2026-05-22T17:03:19.303899+00:00] Bulk fetch page 45: 1000 markets, total=46000
+[2026-05-22T17:03:19.865990+00:00] Bulk fetch page 46: 1000 markets, total=47000
+[2026-05-22T17:03:20.422065+00:00] Bulk fetch page 47: 1000 markets, total=48000
+[2026-05-22T17:03:20.990260+00:00] Bulk fetch page 48: 1000 markets, total=49000
+[2026-05-22T17:03:21.559971+00:00] Bulk fetch page 49: 1000 markets, total=50000
+[2026-05-22T17:03:22.218727+00:00] Financial markets filtered: 2513 / 50000 total
+[2026-05-22T17:03:22.328164+00:00] New records: 2513, Changed prices: 1242
+[2026-05-22T17:03:22.582568+00:00] Daily report written: reports/daily_report_2026-05-22.md
+[2026-05-22T17:03:22.592382+00:00] Pipeline complete.

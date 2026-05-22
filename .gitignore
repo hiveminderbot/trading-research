@@ -6,3 +6,6 @@ user_data/backtest_results/
 user_data/logs/
 user_data/data/
 results/kalshi_market_data.db
+__pycache__/
+*.db
+results/daily_run*.log
