@@ -1,6 +1,6 @@
 """
 Kalshi Daily Runner — Idempotent cron-ready pipeline runner.
-Fetches market data, stores in SQLite, generates daily report.
+Fetches financial market data via series-specific endpoints, stores in SQLite, generates daily report.
 Designed to run via cron without duplicate records.
 """
 import urllib.request
@@ -21,6 +21,27 @@ BASE_URL = "https://api.elections.kalshi.com/trade-api/v2"
 DB_PATH = os.environ.get("KALSHI_DB_PATH", "results/kalshi_market_data.db")
 REPORTS_DIR = "reports"
 RUN_LOG = "results/daily_run.log"
+
+# Curated high-priority financial series tickers
+FINANCIAL_SERIES = [
+    # Fed / Rates
+    "KXFEDDECISION", "KXFRM", "KX10Y", "KX10Y3M", "KX10Y2Y",
+    "KXTREASURY", "KXYIELD", "KXBOND", "KXDOTPLOT",
+    # Equity Indices
+    "KXNASDAQ100", "KXSPY", "KXSP500", "KXDOW",
+    # Crypto
+    "KXBTC", "KXETH", "KXBTC100", "BTCATH", "ETHD",
+    # Forex
+    "KXEURUSDH", "KXGBPUSD", "KXUSDJPY", "KXUSDQ", "KXFXPESO",
+    # Commodities
+    "KXGOLD", "KXSILVER", "KXOIL", "KXWTI", "WTIH",
+    # Macro
+    "KXCPI", "KXCPIYOY", "ACPI", "ACPICORE", "KXUNEMPLOYMENT",
+    "KXGDP", "GDPEU", "KXINFLATION",
+    # Central Banks
+    "KXCBDECISIONCANADA", "KXCBDECISIONJAPAN", "KXCBDECISIONENGLAND",
+    "KXBOE", "KXECB",
+]
 
 
 def log(msg):
@@ -83,31 +104,12 @@ def init_db():
     return conn
 
 
-def get_financial_series():
-    """Kept for compatibility; bulk fetch no longer uses per-series calls."""
-    keywords = [
-        "FED", "RATE", "INFLATION", "GDP", "NASDAQ", "BTC", "ETH", "CPI",
-        "UNEMPLOYMENT", "SPY", "SP500", "DOW", "OIL", "GOLD", "SILVER",
-        "TREASURY", "BOND", "YIELD", "FOREX", "USD", "EUR", "GBP", "JPY"
-    ]
-    data = fetch_json("/series?limit=1000")
-    series = data.get("series", [])
-    financial = []
-    for s in series:
-        title = (s.get("title") or "").upper()
-        ticker = (s.get("ticker") or "").upper()
-        for kw in keywords:
-            if kw in title or kw in ticker:
-                financial.append(s)
-                break
-    return financial
-
-
 def get_markets_for_series(series_ticker):
-    """DEPRECATED: Use fetch_all_markets_bulk() instead to avoid rate limits."""
+    """Fetch all markets for a given series ticker with pagination."""
     markets = []
     cursor = None
-    while True:
+    page = 0
+    while page < 20:
         path = f"/markets?series_ticker={series_ticker}&limit=1000"
         if cursor:
             path += f"&cursor={cursor}"
@@ -117,51 +119,9 @@ def get_markets_for_series(series_ticker):
         cursor = data.get("cursor")
         if not cursor or not batch:
             break
-    return markets
-
-
-def fetch_all_markets_bulk():
-    """
-    Fetch all markets via the bulk /markets endpoint with pagination.
-    This is ~100x faster than per-series fetching and avoids rate limits.
-    Returns a list of all market dicts.
-    """
-    all_markets = []
-    cursor = None
-    page = 0
-    while page < 50:
-        path = "/markets?limit=1000"
-        if cursor:
-            path += f"&cursor={cursor}"
-        data = fetch_json(path)
-        batch = data.get("markets", [])
-        all_markets.extend(batch)
-        cursor = data.get("cursor")
-        log(f"Bulk fetch page {page}: {len(batch)} markets, total={len(all_markets)}")
-        if not cursor or not batch:
-            break
         time.sleep(0.3)
         page += 1
-    return all_markets
-
-
-def filter_financial_markets(all_markets):
-    """Filter the full market list for financial/economic keywords."""
-    keywords = [
-        "FED", "RATE", "INFLATION", "GDP", "NASDAQ", "BTC", "ETH", "CPI",
-        "UNEMPLOYMENT", "SPY", "SP500", "DOW", "OIL", "GOLD", "SILVER",
-        "TREASURY", "BOND", "YIELD", "FOREX", "USD", "EUR", "GBP", "JPY"
-    ]
-    financial = []
-    for m in all_markets:
-        title = (m.get("title") or "").upper()
-        ticker = (m.get("ticker") or "").upper()
-        series = (m.get("series_ticker") or "").upper()
-        for kw in keywords:
-            if kw in title or kw in ticker or kw in series:
-                financial.append(m)
-                break
-    return financial
+    return markets
 
 
 def normalize_market(m):
@@ -247,7 +207,7 @@ def generate_daily_report(conn, run_at):
 
     # Top 10 by volume this run
     c.execute("""
-        SELECT ticker, title, yes_bid, yes_ask, volume_fp, volume_24h_fp, open_interest
+        SELECT ticker, title, yes_bid, yes_ask, volume_fp, open_interest
         FROM market_snapshots
         WHERE fetched_at = ?
         ORDER BY volume_fp DESC
@@ -297,11 +257,11 @@ def generate_daily_report(conn, run_at):
 
     lines.append("## Top 10 Markets by Volume")
     lines.append("")
-    lines.append("| Ticker | Title | Yes Bid | Yes Ask | Volume | 24h Volume | Open Interest |")
-    lines.append("|--------|-------|---------|---------|--------|-----------|---------------|")
+    lines.append("| Ticker | Title | Yes Bid | Yes Ask | Volume | Open Interest |")
+    lines.append("|--------|-------|---------|---------|--------|---------------|")
     for row in top_volume:
-        ticker, title, yes_bid, yes_ask, vol, vol24, oi = row
-        lines.append(f"| {ticker} | {title[:50] if title else 'N/A'} | {yes_bid} | {yes_ask} | {vol:,.0f} | {vol24 if vol24 else 'N/A'} | {oi if oi else 'N/A'} |")
+        ticker, title, yes_bid, yes_ask, vol, oi = row
+        lines.append(f"| {ticker} | {title[:50] if title else 'N/A'} | {yes_bid} | {yes_ask} | {vol:,.0f} | {oi if oi else 'N/A'} |")
     lines.append("")
 
     lines.append("## Top 15 Price Movers (vs previous snapshot)")
@@ -340,7 +300,6 @@ def main():
     conn = init_db()
     error_msg = None
     all_markets = []
-    financial = []
     new_records = 0
     changed_prices = 0
     report_path = None
@@ -351,12 +310,22 @@ def main():
         if not status.get("exchange_active"):
             raise RuntimeError("Exchange is not active")
 
-        # Use bulk fetch instead of per-series to avoid rate limits
-        all_markets = fetch_all_markets_bulk()
-        financial = filter_financial_markets(all_markets)
-        log(f"Financial markets filtered: {len(financial)} / {len(all_markets)} total")
+        # Fetch markets for each curated financial series
+        for series_ticker in FINANCIAL_SERIES:
+            try:
+                markets = get_markets_for_series(series_ticker)
+                if markets:
+                    all_markets.extend(markets)
+                    log(f"Series {series_ticker}: {len(markets)} markets")
+                else:
+                    log(f"Series {series_ticker}: no markets")
+            except Exception as e:
+                log(f"Series {series_ticker}: error - {e}")
+            time.sleep(0.5)  # Rate limit protection between series
 
-        new_records, changed_prices = store_markets(conn, financial, run_at)
+        log(f"Total financial markets fetched: {len(all_markets)}")
+
+        new_records, changed_prices = store_markets(conn, all_markets, run_at)
         log(f"New records: {new_records}, Changed prices: {changed_prices}")
 
         report_path = generate_daily_report(conn, run_at)
@@ -370,7 +339,7 @@ def main():
         c.execute("""
             INSERT INTO pipeline_runs (run_at, markets_fetched, new_records, changed_prices, error)
             VALUES (?, ?, ?, ?, ?)
-        """, (run_at, len(financial), new_records, changed_prices, error_msg))
+        """, (run_at, len(all_markets), new_records, changed_prices, error_msg))
         conn.commit()
         conn.close()
 
