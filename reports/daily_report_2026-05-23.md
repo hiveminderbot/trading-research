@@ -1,6 +1,6 @@
 # Kalshi Daily Market Report — 2026-05-23
 
-**Run at:** 2026-05-23T00:55:41.831259+00:00  
+**Run at:** 2026-05-23T18:00:00+00:00  
 **Total unique markets in DB:** 88895  
 **Markets in this run:** 46571  
 
@@ -8,36 +8,36 @@
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume | Open Interest |
 |--------|-------|---------|---------|--------|---------------|
-| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 100,625 | 1978053.06 |
-| KXWTI-26MAY2214-T95.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 91,792 | 38414.68 |
-| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.02 | 0.03 | 87,531 | 1919848.09 |
-| KXWTI-26MAY2214-T94.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 79,796 | 41787.79 |
-| KXWTI-26MAY2214-T96.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 69,322 | 28227.54 |
-| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 68,755 | 1957762.27 |
-| KXWTI-26MAY2214-T97.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 46,017 | 20555.42 |
-| KXWTI-26MAY2214-T99.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 31,757 | 21786.74 |
-| KXWTI-26MAY2214-T93.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 30,922 | 27776.63 |
+| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 100,595 | 1979483.35 |
+| KXWTI-26MAY2214-T95.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 89,718 | 38414.68 |
+| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.02 | 0.03 | 87,121 | 1920715.82 |
+| KXWTI-26MAY2214-T94.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 78,713 | 41787.79 |
+| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 68,689 | 1958196.27 |
+| KXWTI-26MAY2214-T96.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 68,442 | 28227.54 |
+| KXWTI-26MAY2214-T97.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 45,042 | 20555.42 |
+| KXWTI-26MAY2214-T99.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 31,390 | 21786.74 |
+| KXWTI-26MAY2214-T93.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 30,647 | 27776.63 |
 | KXBTC-26MAY2212-B76650 | Bitcoin price range  on May 22, 2026? | 0.0 | 1.0 | 27,613 | 13523.1 |
 
 ## Top 15 Price Movers (vs previous snapshot)
 
 | Ticker | Title | Prev Bid | Curr Bid | Change % | Volume |
 |--------|-------|----------|----------|----------|--------|
-| KXETH-26MAY2221-B2070 | Ethereum price at May 22, 2026 at 9pm EDT? | 0.24 | 0.83 | +245.8% | 250 |
-| KXBTC-26MAY2221-B75250 | Bitcoin price range  on May 22, 2026? | 0.14 | 0.4 | +185.7% | 870 |
-| KXBTC-26MAY2221-B75350 | Bitcoin price range  on May 22, 2026? | 0.16 | 0.42 | +162.5% | 934 |
-| KXBTC-26MAY2221-B75050 | Bitcoin price range  on May 22, 2026? | 0.1 | 0.0 | -100.0% | 155 |
-| KXBTC-26MAY2221-B75550 | Bitcoin price range  on May 22, 2026? | 0.04 | 0.0 | -100.0% | 1,056 |
-| KXBTC-26MAY2917-B72250 | Bitcoin price range  on May 29, 2026? | 0.01 | 0.02 | +100.0% | 75 |
-| KXETH-26MAY2221-B2090 | Ethereum price at May 22, 2026 at 9pm EDT? | 0.02 | 0.0 | -100.0% | 145 |
-| KXETH-26MAY2917-B1880 | Ethereum price at May 29, 2026 at 5pm EDT? | 0.01 | 0.02 | +100.0% | 2 |
-| KXBTC-26MAY2221-B75150 | Bitcoin price range  on May 22, 2026? | 0.22 | 0.03 | -86.4% | 1,097 |
-| KXBTC-26MAY2221-B75450 | Bitcoin price range  on May 22, 2026? | 0.09 | 0.02 | -77.8% | 1,513 |
-| KXETH-26MAY2221-B2050 | Ethereum price at May 22, 2026 at 9pm EDT? | 0.24 | 0.1 | -58.3% | 203 |
+| KXBTC-26MAY2917-B71750 | Bitcoin price range  on May 29, 2026? | 0.01 | 0.0 | -100.0% | 0 |
+| KXBTC-26MAY2222-B75150 | Bitcoin price range  on May 22, 2026? | 0.02 | 0.03 | +50.0% | 142 |
+| KXBTC-26MAY2317-B74375 | Bitcoin price range  on May 23, 2026? | 0.02 | 0.03 | +50.0% | 204 |
 | KXBTC-26MAY2917-B72750 | Bitcoin price range  on May 29, 2026? | 0.02 | 0.03 | +50.0% | 223 |
-| KXBTC-26MAY2917-B77750 | Bitcoin price range  on May 29, 2026? | 0.02 | 0.03 | +50.0% | 79 |
-| KXWTI-26NOV03-T115.99 | Will the WTI front-month settle oil price  be | 0.1 | 0.13 | +30.0% | 0 |
-| KXBTC-26MAY2317-B74625 | Bitcoin price range  on May 23, 2026? | 0.07 | 0.09 | +28.6% | 213 |
+| KXBTC-26MAY2222-B75450 | Bitcoin price range  on May 22, 2026? | 0.27 | 0.16 | -40.7% | 359 |
+| KXBTC-26MAY2222-B75250 | Bitcoin price range  on May 22, 2026? | 0.12 | 0.16 | +33.3% | 203 |
+| KXBTC-26MAY2917-B78250 | Bitcoin price range  on May 29, 2026? | 0.03 | 0.02 | -33.3% | 79 |
+| KXBTC-26MAY2917-B73750 | Bitcoin price range  on May 29, 2026? | 0.04 | 0.05 | +25.0% | 96 |
+| KXBTC-26MAY2917-B74750 | Bitcoin price range  on May 29, 2026? | 0.05 | 0.06 | +20.0% | 449 |
+| KXWTI-26MAY2714-T100.99 | Will the WTI crude oil settlement price be ab | 0.38 | 0.32 | -15.8% | 8 |
+| KXCPIYOY-26JUL-T5.0 | Will the rate of CPI inflation be above 5.0%  | 0.07 | 0.08 | +14.3% | 188 |
+| KXBTC-26MAY2317-B75125 | Bitcoin price range  on May 23, 2026? | 0.09 | 0.1 | +11.1% | 912 |
+| KXWTI-26NOV03-T78.99 | Will the WTI front-month settle oil price  be | 0.47 | 0.52 | +10.6% | 2 |
+| KXWTI-26MAY2714-T92.99 | Will the WTI crude oil settlement price be ab | 0.74 | 0.68 | -8.1% | 69 |
+| KXBTC-26MAY2317-B75625 | Bitcoin price range  on May 23, 2026? | 0.13 | 0.12 | -7.7% | 1,079 |
 
 ## New Markets (first appearance)
 
@@ -45,4 +45,4 @@
 |--------|-------|---------|---------|--------|
 
 ---
-*Generated by Kalshi Daily Runner*
+*Generated by Kalshi Intraday Runner*

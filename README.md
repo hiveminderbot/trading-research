@@ -5,7 +5,41 @@ End-to-end data pipeline that fetches active financial markets from Kalshi's pub
 ## Quick Start
 
 ```bash
-python3 kalshi_market_pipeline.py
+python3 kalshi_daily_runner.py
+```
+
+## Intraday Cron Setup (4x Daily)
+
+The runner supports idempotent intraday execution via canonical 6-hour slots.
+
+### Cron Schedule
+
+Add to your crontab (`crontab -e`):
+
+```bash
+# Kalshi intraday data collection — 4x daily UTC
+0 0 * * * cd /home/exedev/autonomy/labs/trading-research && python3 kalshi_daily_runner.py
+0 6 * * * cd /home/exedev/autonomy/labs/trading-research && python3 kalshi_daily_runner.py
+0 12 * * * cd /home/exedev/autonomy/labs/trading-research && python3 kalshi_daily_runner.py
+0 18 * * * cd /home/exedev/autonomy/labs/trading-research && python3 kalshi_daily_runner.py
+```
+
+### Idempotency
+
+- The runner auto-computes `run_id` from the current 6-hour slot (`00:00`, `06:00`, `12:00`, `18:00` UTC).
+- If a `run_id` already exists in `pipeline_runs`, the run is skipped unless `--force` is passed.
+- This prevents duplicate records when cron overlaps or restarts.
+
+### Manual Run with Explicit Slot
+
+```bash
+python3 kalshi_daily_runner.py --run-id 2026-05-23T12:00:00+00:00
+```
+
+### Coverage Report
+
+```bash
+python3 kalshi_daily_runner.py --coverage-only
 ```
 
 ## Data Schema
@@ -15,17 +49,14 @@ python3 kalshi_market_pipeline.py
 |--------|------|-------------|
 | ticker | TEXT | Market ticker (unique per snapshot) |
 | title | TEXT | Market title |
-| event_ticker | TEXT | Event ticker (groups related markets) |
+| series_ticker | TEXT | Series ticker (groups related markets) |
 | status | TEXT | active, settled, etc. |
-| yes_bid_dollars | REAL | Yes bid price in dollars |
-| yes_ask_dollars | REAL | Yes ask price in dollars |
-| no_bid_dollars | REAL | No bid price in dollars |
-| no_ask_dollars | REAL | No ask price in dollars |
-| last_price_dollars | REAL | Last traded price |
+| yes_bid | REAL | Yes bid price in dollars |
+| yes_ask | REAL | Yes ask price in dollars |
+| no_bid | REAL | No bid price in dollars |
+| no_ask | REAL | No ask price in dollars |
 | volume_fp | REAL | Total volume |
-| volume_24h_fp | REAL | 24h volume |
 | open_interest | REAL | Open interest |
-| liquidity_dollars | REAL | Liquidity in dollars |
 | expiration_date | TEXT | Market expiration |
 | fetched_at | TEXT | ISO timestamp of fetch |
 
