@@ -6,8 +6,8 @@
 
 - Run: `2026-05-24T00:00:00+00:00`
 - Markets fetched: 46511
-- New records: 46511
-- Changed prices: 7258
+- New records: 0
+- Changed prices: 653
 - Error: None
 - Latest valid-bid rows: 653
 - Latest tradeable/liquid rows (`bid>0`, `volume>0`, `OI>0`): 212

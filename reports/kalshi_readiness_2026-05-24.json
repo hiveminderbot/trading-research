@@ -304,7 +304,7 @@
     }
   ],
   "db": "results/kalshi_market_data.db",
-  "generated_at": "2026-05-24T03:40:55.693756+00:00",
+  "generated_at": "2026-05-24T04:24:53.874749+00:00",
   "history_coverage": {
     "tickers_2plus_days": 599,
     "tickers_2plus_snapshots": 641,
@@ -313,10 +313,10 @@
     "tickers_8plus_snapshots": 596
   },
   "latest_pipeline_run": {
-    "changed_prices": 7258,
+    "changed_prices": 653,
     "error": null,
     "markets_fetched": 46511,
-    "new_records": 46511,
+    "new_records": 0,
     "run_at": "2026-05-24T00:00:00+00:00"
   },
   "latest_run_counts": {
