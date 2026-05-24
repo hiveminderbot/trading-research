@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Directional Bias",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-24",
+  "total_trades": 619,
+  "winning_trades": 28,
+  "losing_trades": 591,
+  "total_pnl": -1269.2,
+  "max_drawdown": 1.2692,
+  "sharpe_ratio": -0.0263,
+  "win_rate": 0.0452,
+  "avg_trade_pnl": -1.0504,
+  "equity_curve_length": 1239
+}

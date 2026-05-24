@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Contrarian",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-24",
+  "total_trades": 619,
+  "winning_trades": 23,
+  "losing_trades": 596,
+  "total_pnl": -1206.8,
+  "max_drawdown": 1.2068,
+  "sharpe_ratio": 0.0052,
+  "win_rate": 0.0372,
+  "avg_trade_pnl": -0.9496,
+  "equity_curve_length": 1239
+}

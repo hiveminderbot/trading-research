@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Mean Reversion Strategy",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-24",
+  "total_trades": 47,
+  "winning_trades": 6,
+  "losing_trades": 41,
+  "total_pnl": -26.0,
+  "max_drawdown": 0.063,
+  "sharpe_ratio": -0.0687,
+  "win_rate": 0.1277,
+  "avg_trade_pnl": 0.4468,
+  "equity_curve_length": 95
+}

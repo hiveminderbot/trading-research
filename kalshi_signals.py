@@ -65,18 +65,32 @@ def load_snapshots(db_path: str, ticker: Optional[str] = None) -> List[MarketSna
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
+    # Historical pipeline versions used either *_dollars columns or normalized
+    # yes_bid/yes_ask columns. Use COALESCE so signal extraction follows the
+    # active ingestion schema instead of silently backtesting stale legacy rows.
     if ticker:
         c.execute("""
-            SELECT ticker, title, yes_bid_dollars, yes_ask_dollars, volume_fp, fetched_at
+            SELECT ticker, title,
+                   COALESCE(yes_bid_dollars, yes_bid) AS bid,
+                   COALESCE(yes_ask_dollars, yes_ask) AS ask,
+                   COALESCE(volume_24h_fp, volume_fp) AS volume,
+                   fetched_at
             FROM market_snapshots
-            WHERE ticker = ? AND yes_bid_dollars IS NOT NULL AND yes_bid_dollars != 0
+            WHERE ticker = ?
+              AND COALESCE(yes_bid_dollars, yes_bid) IS NOT NULL
+              AND COALESCE(yes_bid_dollars, yes_bid) != 0
             ORDER BY fetched_at
         """, (ticker,))
     else:
         c.execute("""
-            SELECT ticker, title, yes_bid_dollars, yes_ask_dollars, volume_fp, fetched_at
+            SELECT ticker, title,
+                   COALESCE(yes_bid_dollars, yes_bid) AS bid,
+                   COALESCE(yes_ask_dollars, yes_ask) AS ask,
+                   COALESCE(volume_24h_fp, volume_fp) AS volume,
+                   fetched_at
             FROM market_snapshots
-            WHERE yes_bid_dollars IS NOT NULL AND yes_bid_dollars != 0
+            WHERE COALESCE(yes_bid_dollars, yes_bid) IS NOT NULL
+              AND COALESCE(yes_bid_dollars, yes_bid) != 0
             ORDER BY ticker, fetched_at
         """)
 
