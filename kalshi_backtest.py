@@ -492,13 +492,40 @@ def volume_breakout_strategy(signals: List[Signal], position: Optional[Position]
 KALSHI_FEE_PER_CONTRACT = 0.01  # $0.01 per contract per side
 
 
+@dataclass
+class FeeModel:
+    """Fee model for Kalshi backtesting."""
+    contract_fee: float = 0.01      # $ per contract per side
+    trading_fee_pct: float = 0.0    # % of notional per side (e.g. 0.005 = 0.5%)
+    slippage_per_contract: float = 0.0  # $ per contract per side
+
+    def compute_fee(self, position_dollars: float, price: float) -> float:
+        """Total fee in dollars for one side of a trade."""
+        if price <= 0:
+            return 0.0
+        contracts = position_dollars / price
+        contract_fees = contracts * self.contract_fee
+        trading_fees = position_dollars * self.trading_fee_pct
+        slippage = contracts * self.slippage_per_contract
+        return contract_fees + trading_fees + slippage
+
+
+# Predefined fee models
+FEE_SIMPLE = FeeModel(contract_fee=0.01)
+FEE_KALSHI_REALISTIC = FeeModel(
+    contract_fee=0.01,
+    trading_fee_pct=0.005,  # 0.5%
+    slippage_per_contract=0.01,
+)
+
+
 def run_backtest(
     signals_by_ticker: Dict[str, List[Signal]],
     strategy: Callable[[List[Signal], Optional[Position]], str],
     strategy_name: str,
     initial_capital: float = 1000.0,
     position_size: float = 100.0,  # Dollar amount per trade
-    fee_per_contract: float = KALSHI_FEE_PER_CONTRACT,
+    fee_model: FeeModel = FEE_SIMPLE,
 ) -> BacktestResult:
     """
     Run a backtest across all tickers using the provided strategy.
@@ -547,30 +574,31 @@ def run_backtest(
                     price=sig.mid_price, time=sig.fetched_at
                 ))
                 # Entry fee
-                equity -= fee_per_contract * position_size
+                equity -= fee_model.compute_fee(position_size, sig.mid_price)
                 equity_curve.append(equity)
 
             elif action == 'BUY_NO' and not position and sig.mid_price is not None:
+                no_price = 1.0 - sig.mid_price
                 position = Position(
                     ticker=ticker,
                     side='NO',
-                    entry_price=1.0 - sig.mid_price,  # Price of NO contract
+                    entry_price=no_price,
                     entry_time=sig.fetched_at,
                     size=position_size
                 )
                 trades.append(Trade(
                     ticker=ticker, action='OPEN', side='NO',
-                    price=1.0 - sig.mid_price, time=sig.fetched_at
+                    price=no_price, time=sig.fetched_at
                 ))
                 # Entry fee
-                equity -= fee_per_contract * position_size
+                equity -= fee_model.compute_fee(position_size, no_price)
                 equity_curve.append(equity)
 
             elif action == 'CLOSE' and position and sig.mid_price is not None:
                 exit_price = sig.mid_price if position.side == 'YES' else 1.0 - sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
                 # Exit fee
-                pnl -= fee_per_contract * position.size
+                pnl -= fee_model.compute_fee(position_size, exit_price)
 
                 equity += pnl
                 equity_curve.append(equity)
@@ -591,7 +619,7 @@ def run_backtest(
                 exit_price = last_sig.mid_price if position.side == 'YES' else 1.0 - last_sig.mid_price
                 pnl = (exit_price - position.entry_price) * position.size
                 # Exit fee
-                pnl -= fee_per_contract * position.size
+                pnl -= fee_model.compute_fee(position_size, exit_price)
 
                 equity += pnl
                 equity_curve.append(equity)
@@ -701,7 +729,18 @@ def generate_backtest_report(result: BacktestResult, output_path: str):
 
 if __name__ == "__main__":
     import os
-    db_path = os.environ.get("KALSHI_DB_PATH", "results/kalshi_market_data.db")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Kalshi Backtest Engine")
+    parser.add_argument("--db", default=os.environ.get("KALSHI_DB_PATH", "results/kalshi_market_data.db"))
+    parser.add_argument("--fee-model", choices=["simple", "realistic"], default="simple",
+                        help="Fee model: simple=$0.01/contract only, realistic=0.5% trading fee + slippage")
+    parser.add_argument("--strategies", default="all", help="Comma-separated strategy names or 'all'")
+    args = parser.parse_args()
+
+    db_path = args.db
+    fee_model = FEE_KALSHI_REALISTIC if args.fee_model == "realistic" else FEE_SIMPLE
+    fee_label = "realistic" if args.fee_model == "realistic" else "simple"
 
     print("Loading signals...")
     signals = extract_all_signals(db_path)
@@ -729,16 +768,20 @@ if __name__ == "__main__":
         (momentum_follower_2snap_strategy, "Momentum Follower 2-Snap"),
     ]
 
+    if args.strategies != "all":
+        wanted = {s.strip().lower() for s in args.strategies.split(",")}
+        strategies = [(s, n) for s, n in strategies if n.lower() in wanted]
+
     for strat, name in strategies:
-        print(f"\nRunning {name}...")
-        result = run_backtest(signals, strat, name)
+        print(f"\nRunning {name} (fee_model={fee_label})...")
+        result = run_backtest(signals, strat, name, fee_model=fee_model)
         print(f"  Trades: {result.total_trades}, Win Rate: {result.win_rate:.1%}, PnL: ${result.total_pnl:.2f}")
 
-        report_path = f"reports/backtest_{name.lower().replace(' ', '_')}_{result.end_date}.md"
+        report_path = f"reports/backtest_{name.lower().replace(' ', '_')}_{result.end_date}_{fee_label}.md"
         generate_backtest_report(result, report_path)
         print(f"  Report: {report_path}")
 
-        json_path = f"reports/backtest_{name.lower().replace(' ', '_')}_{result.end_date}.json"
+        json_path = f"reports/backtest_{name.lower().replace(' ', '_')}_{result.end_date}_{fee_label}.json"
         with open(json_path, "w") as f:
             json.dump(result.to_dict(), f, indent=2)
         print(f"  JSON: {json_path}")

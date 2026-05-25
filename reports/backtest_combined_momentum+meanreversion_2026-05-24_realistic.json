@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Combined Momentum+MeanReversion",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-24",
+  "total_trades": 4,
+  "winning_trades": 0,
+  "losing_trades": 4,
+  "total_pnl": -169.3554,
+  "max_drawdown": 0.1694,
+  "sharpe_ratio": -2.3739,
+  "win_rate": 0.0,
+  "avg_trade_pnl": -26.3531,
+  "equity_curve_length": 9
+}

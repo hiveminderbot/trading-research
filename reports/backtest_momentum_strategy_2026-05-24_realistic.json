@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Momentum Strategy",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-24",
+  "total_trades": 24,
+  "winning_trades": 1,
+  "losing_trades": 23,
+  "total_pnl": -930.8526,
+  "max_drawdown": 0.9309,
+  "sharpe_ratio": -0.8917,
+  "win_rate": 0.0417,
+  "avg_trade_pnl": -22.8322,
+  "equity_curve_length": 49
+}
