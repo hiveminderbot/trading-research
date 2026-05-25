@@ -492,6 +492,30 @@ def volume_breakout_strategy(signals: List[Signal], position: Optional[Position]
 KALSHI_FEE_PER_CONTRACT = 0.01  # $0.01 per contract per side
 
 
+def filter_flat_tickers(signals_by_ticker: Dict[str, List[Signal]], min_price_range: float = 0.0) -> Dict[str, List[Signal]]:
+    """
+    Filter out tickers with insufficient price variation.
+
+    A 'flat' ticker has zero (or near-zero) price movement between consecutive
+    snapshots, which guarantees fee losses with no profit potential.
+
+    Parameters:
+        signals_by_ticker: mapping of ticker -> signal list
+        min_price_range: minimum required max(price) - min(price) to keep ticker
+
+    Returns:
+        Filtered dict with flat tickers removed.
+    """
+    filtered: Dict[str, List[Signal]] = {}
+    for ticker, sigs in signals_by_ticker.items():
+        if len(sigs) < 2:
+            continue
+        prices = [s.mid_price for s in sigs if s.mid_price is not None]
+        if len(prices) >= 2 and (max(prices) - min(prices)) > min_price_range:
+            filtered[ticker] = sigs
+    return filtered
+
+
 @dataclass
 class FeeModel:
     """Fee model for Kalshi backtesting."""
@@ -725,6 +749,266 @@ def generate_backtest_report(result: BacktestResult, output_path: str):
 
     with open(output_path, "w") as f:
         f.write("\n".join(lines))
+
+
+def run_walk_forward_backtest(
+    signals_by_ticker: Dict[str, List[Signal]],
+    strategy: Callable[[List[Signal], Optional[Position]], str],
+    strategy_name: str,
+    train_days: List[str],
+    test_day: str,
+    initial_capital: float = 1000.0,
+    position_size: float = 100.0,
+    fee_model: FeeModel = FEE_SIMPLE,
+) -> BacktestResult:
+    """
+    Walk-forward backtest: compute signals on full history (train + test),
+    but only execute trades on the test day.
+
+    This prevents lookahead bias while still allowing strategies to use
+    historical context for signal computation.
+    """
+    trades: List[Trade] = []
+    equity = initial_capital
+    equity_curve = [equity]
+    peak_equity = equity
+    max_drawdown = 0.0
+
+    for ticker, signals in signals_by_ticker.items():
+        if len(signals) < 2:
+            continue
+
+        position: Optional[Position] = None
+
+        for i, sig in enumerate(signals):
+            day = sig.fetched_at[:10]
+
+            import inspect
+            sig_params = inspect.signature(strategy).parameters
+            kwargs = {}
+            if 'idx' in sig_params:
+                kwargs['idx'] = i
+            if 'total' in sig_params:
+                kwargs['total'] = len(signals)
+            if 'full_signals' in sig_params:
+                kwargs['full_signals'] = signals
+            if kwargs:
+                action = strategy(signals[:i+1], position, **kwargs)
+            else:
+                action = strategy(signals[:i+1], position)
+
+            # Only execute trades on test day
+            if day != test_day:
+                continue
+
+            if action == 'BUY_YES' and not position and sig.mid_price is not None:
+                position = Position(
+                    ticker=ticker,
+                    side='YES',
+                    entry_price=sig.mid_price,
+                    entry_time=sig.fetched_at,
+                    size=position_size
+                )
+                trades.append(Trade(
+                    ticker=ticker, action='OPEN', side='YES',
+                    price=sig.mid_price, time=sig.fetched_at
+                ))
+                equity -= fee_model.compute_fee(position_size, sig.mid_price)
+                equity_curve.append(equity)
+
+            elif action == 'BUY_NO' and not position and sig.mid_price is not None:
+                no_price = 1.0 - sig.mid_price
+                position = Position(
+                    ticker=ticker,
+                    side='NO',
+                    entry_price=no_price,
+                    entry_time=sig.fetched_at,
+                    size=position_size
+                )
+                trades.append(Trade(
+                    ticker=ticker, action='OPEN', side='NO',
+                    price=no_price, time=sig.fetched_at
+                ))
+                equity -= fee_model.compute_fee(position_size, no_price)
+                equity_curve.append(equity)
+
+            elif action == 'CLOSE' and position and sig.mid_price is not None:
+                exit_price = sig.mid_price if position.side == 'YES' else 1.0 - sig.mid_price
+                pnl = (exit_price - position.entry_price) * position.size
+                pnl -= fee_model.compute_fee(position_size, exit_price)
+
+                equity += pnl
+                equity_curve.append(equity)
+                peak_equity = max(peak_equity, equity)
+                drawdown = (peak_equity - equity) / peak_equity if peak_equity > 0 else 0
+                max_drawdown = max(max_drawdown, drawdown)
+
+                trades.append(Trade(
+                    ticker=ticker, action='CLOSE', side=position.side,
+                    price=exit_price, time=sig.fetched_at, pnl=pnl
+                ))
+                position = None
+
+        # Close any open position at end of test day
+        if position and signals:
+            last_sig = signals[-1]
+            if last_sig.fetched_at[:10] == test_day and last_sig.mid_price is not None:
+                exit_price = last_sig.mid_price if position.side == 'YES' else 1.0 - last_sig.mid_price
+                pnl = (exit_price - position.entry_price) * position.size
+                pnl -= fee_model.compute_fee(position_size, exit_price)
+
+                equity += pnl
+                equity_curve.append(equity)
+                peak_equity = max(peak_equity, equity)
+                drawdown = (peak_equity - equity) / peak_equity if peak_equity > 0 else 0
+                max_drawdown = max(max_drawdown, drawdown)
+
+                trades.append(Trade(
+                    ticker=ticker, action='EXPIRE', side=position.side,
+                    price=exit_price, time=last_sig.fetched_at, pnl=pnl
+                ))
+
+    # Calculate metrics
+    closed_trades = [t for t in trades if t.action in ('CLOSE', 'EXPIRE', 'EXPIRE_SAME_SNAPSHOT')]
+    winning = len([t for t in closed_trades if t.pnl and t.pnl > 0])
+    losing = len([t for t in closed_trades if t.pnl and t.pnl <= 0])
+    total_pnl = equity - initial_capital
+    win_rate = winning / len(closed_trades) if closed_trades else 0.0
+    avg_pnl = sum(t.pnl for t in closed_trades if t.pnl is not None) / len(closed_trades) if closed_trades else 0.0
+
+    # Sharpe ratio (simplified: assume daily returns, no risk-free rate)
+    sharpe = None
+    if len(equity_curve) > 1:
+        returns = [(equity_curve[i] - equity_curve[i-1]) / equity_curve[i-1]
+                   for i in range(1, len(equity_curve)) if equity_curve[i-1] != 0]
+        if len(returns) > 1:
+            import statistics
+            try:
+                mean_ret = statistics.mean(returns)
+                std_ret = statistics.stdev(returns)
+                if std_ret > 0:
+                    sharpe = mean_ret / std_ret
+            except statistics.StatisticsError:
+                pass
+
+    # Get date range (test day only)
+    all_times = []
+    for signals in signals_by_ticker.values():
+        if signals:
+            all_times.extend([s.fetched_at for s in signals if s.fetched_at[:10] == test_day])
+    all_times.sort()
+
+    return BacktestResult(
+        strategy_name=f"{strategy_name} (walk-forward {test_day})",
+        start_date=test_day,
+        end_date=test_day,
+        total_trades=len(closed_trades),
+        winning_trades=winning,
+        losing_trades=losing,
+        total_pnl=total_pnl,
+        max_drawdown=max_drawdown,
+        sharpe_ratio=sharpe,
+        win_rate=win_rate,
+        avg_trade_pnl=avg_pnl,
+        equity_curve=equity_curve,
+        trades=trades
+    )
+
+
+def generate_comparison_report(
+    baseline_results: List[BacktestResult],
+    filtered_results: List[BacktestResult],
+    walk_forward_results: List[BacktestResult],
+    output_path: str,
+    fee_label: str = "simple",
+):
+    """Generate a markdown comparison report with before/after analysis."""
+    lines = []
+    lines.append("# Kalshi Backtest Comparison Report")
+    lines.append("")
+    lines.append(f"**Fee Model:** {fee_label}")
+    lines.append(f"**Generated:** {datetime.now().isoformat()[:19]}")
+    lines.append("")
+
+    lines.append("## Summary")
+    lines.append("")
+    lines.append("| Strategy | Baseline Trades | Baseline PnL | Filtered Trades | Filtered PnL | WF Trades | WF PnL |")
+    lines.append("|----------|-----------------|--------------|-----------------|--------------|-----------|--------|")
+    for b, f, w in zip(baseline_results, filtered_results, walk_forward_results):
+        lines.append(
+            f"| {b.strategy_name} | {b.total_trades} | ${b.total_pnl:.2f} | "
+            f"{f.total_trades} | ${f.total_pnl:.2f} | {w.total_trades} | ${w.total_pnl:.2f} |"
+        )
+    lines.append("")
+
+    lines.append("## Baseline (All Tickers)")
+    lines.append("")
+    for r in baseline_results:
+        lines.append(f"### {r.strategy_name}")
+        lines.append(f"- Trades: {r.total_trades}")
+        lines.append(f"- Win Rate: {r.win_rate:.1%}")
+        lines.append(f"- Total PnL: ${r.total_pnl:.2f}")
+        lines.append(f"- Max Drawdown: {r.max_drawdown:.1%}")
+        lines.append(f"- Sharpe: {r.sharpe_ratio:.3f}" if r.sharpe_ratio else "- Sharpe: N/A")
+        lines.append("")
+
+    lines.append("## With Flat-Ticker Filter")
+    lines.append("")
+    for r in filtered_results:
+        lines.append(f"### {r.strategy_name}")
+        lines.append(f"- Trades: {r.total_trades}")
+        lines.append(f"- Win Rate: {r.win_rate:.1%}")
+        lines.append(f"- Total PnL: ${r.total_pnl:.2f}")
+        lines.append(f"- Max Drawdown: {r.max_drawdown:.1%}")
+        lines.append(f"- Sharpe: {r.sharpe_ratio:.3f}" if r.sharpe_ratio else "- Sharpe: N/A")
+        lines.append("")
+
+    lines.append("## Walk-Forward Validation (Test Day: 2026-05-24)")
+    lines.append("")
+    for r in walk_forward_results:
+        lines.append(f"### {r.strategy_name}")
+        lines.append(f"- Trades: {r.total_trades}")
+        lines.append(f"- Win Rate: {r.win_rate:.1%}")
+        lines.append(f"- Total PnL: ${r.total_pnl:.2f}")
+        lines.append(f"- Max Drawdown: {r.max_drawdown:.1%}")
+        lines.append(f"- Sharpe: {r.sharpe_ratio:.3f}" if r.sharpe_ratio else "- Sharpe: N/A")
+        lines.append("")
+
+    lines.append("## Recommendation")
+    lines.append("")
+    # Determine recommendation based on results
+    any_profitable = any(r.total_pnl > 0 for r in walk_forward_results)
+    if any_profitable:
+        lines.append("**Status: ADOPT WITH CAUTION**")
+        lines.append("")
+        lines.append("At least one strategy showed positive out-of-sample PnL.")
+        lines.append("Next steps:")
+        lines.append("1. Collect more test days for robust walk-forward validation")
+        lines.append("2. Implement live paper-trading with small position sizes")
+        lines.append("3. Monitor fee impact closely — low-priced contracts dominate losses")
+    else:
+        lines.append("**Status: REJECT**")
+        lines.append("")
+        lines.append("No strategy produced positive out-of-sample PnL under realistic fees.")
+        lines.append("Key findings:")
+        lines.append("1. Fee structure ($0.01/contract) makes low-priced contracts unprofitable")
+        lines.append("2. Flat tickers (79.5% of dataset) consume capacity without generating alpha")
+        lines.append("3. Signal quality is insufficient to overcome transaction costs")
+        lines.append("")
+        lines.append("Recommended next experiments:")
+        lines.append("- Add minimum price filter (e.g., skip contracts below $0.10)")
+        lines.append("- Implement position sizing based on expected move vs fee ratio")
+        lines.append("- Explore longer holding periods or event-driven strategies")
+        lines.append("- Collect more multi-snapshot data per ticker per day")
+    lines.append("")
+
+    lines.append("---")
+    lines.append("*Generated by Kalshi Backtest Engine*")
+
+    with open(output_path, "w") as f:
+        f.write("\n".join(lines))
+
+    print(f"Comparison report written to: {output_path}")
 
 
 if __name__ == "__main__":

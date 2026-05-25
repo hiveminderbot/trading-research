@@ -1,0 +1,135 @@
+{
+  "fee_model": "realistic",
+  "baseline": [
+    {
+      "strategy_name": "Momentum",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 24,
+      "winning_trades": 1,
+      "losing_trades": 23,
+      "total_pnl": -930.8526,
+      "max_drawdown": 0.9309,
+      "sharpe_ratio": -0.8917,
+      "win_rate": 0.0417,
+      "avg_trade_pnl": -22.8322,
+      "equity_curve_length": 49
+    },
+    {
+      "strategy_name": "Mean Reversion",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 47,
+      "winning_trades": 6,
+      "losing_trades": 41,
+      "total_pnl": -446.1836,
+      "max_drawdown": 0.4462,
+      "sharpe_ratio": -0.4627,
+      "win_rate": 0.1277,
+      "avg_trade_pnl": -3.9987,
+      "equity_curve_length": 95
+    },
+    {
+      "strategy_name": "Combined",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 4,
+      "winning_trades": 0,
+      "losing_trades": 4,
+      "total_pnl": -169.3554,
+      "max_drawdown": 0.1694,
+      "sharpe_ratio": -2.3739,
+      "win_rate": 0.0,
+      "avg_trade_pnl": -26.3531,
+      "equity_curve_length": 9
+    }
+  ],
+  "filtered": [
+    {
+      "strategy_name": "Momentum (filtered)",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 24,
+      "winning_trades": 1,
+      "losing_trades": 23,
+      "total_pnl": -930.8526,
+      "max_drawdown": 0.9309,
+      "sharpe_ratio": -0.8917,
+      "win_rate": 0.0417,
+      "avg_trade_pnl": -22.8322,
+      "equity_curve_length": 49
+    },
+    {
+      "strategy_name": "Mean Reversion (filtered)",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 47,
+      "winning_trades": 6,
+      "losing_trades": 41,
+      "total_pnl": -446.1836,
+      "max_drawdown": 0.4462,
+      "sharpe_ratio": -0.4627,
+      "win_rate": 0.1277,
+      "avg_trade_pnl": -3.9987,
+      "equity_curve_length": 95
+    },
+    {
+      "strategy_name": "Combined (filtered)",
+      "start_date": "2026-05-19",
+      "end_date": "2026-05-24",
+      "total_trades": 4,
+      "winning_trades": 0,
+      "losing_trades": 4,
+      "total_pnl": -169.3554,
+      "max_drawdown": 0.1694,
+      "sharpe_ratio": -2.3739,
+      "win_rate": 0.0,
+      "avg_trade_pnl": -26.3531,
+      "equity_curve_length": 9
+    }
+  ],
+  "walk_forward": [
+    {
+      "strategy_name": "Momentum (walk-forward 2026-05-24)",
+      "start_date": "2026-05-24",
+      "end_date": "2026-05-24",
+      "total_trades": 2,
+      "winning_trades": 0,
+      "losing_trades": 2,
+      "total_pnl": -74.4974,
+      "max_drawdown": 0.0745,
+      "sharpe_ratio": -1.3023,
+      "win_rate": 0.0,
+      "avg_trade_pnl": -18.6243,
+      "equity_curve_length": 5
+    },
+    {
+      "strategy_name": "Mean Reversion (walk-forward 2026-05-24)",
+      "start_date": "2026-05-24",
+      "end_date": "2026-05-24",
+      "total_trades": 19,
+      "winning_trades": 0,
+      "losing_trades": 19,
+      "total_pnl": -225.8541,
+      "max_drawdown": 0.2259,
+      "sharpe_ratio": -0.7145,
+      "win_rate": 0.0,
+      "avg_trade_pnl": -5.9435,
+      "equity_curve_length": 39
+    },
+    {
+      "strategy_name": "Combined (walk-forward 2026-05-24)",
+      "start_date": "2026-05-24",
+      "end_date": "2026-05-24",
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0.0,
+      "max_drawdown": 0.0,
+      "sharpe_ratio": null,
+      "win_rate": 0.0,
+      "avg_trade_pnl": 0.0,
+      "equity_curve_length": 1
+    }
+  ]
+}
