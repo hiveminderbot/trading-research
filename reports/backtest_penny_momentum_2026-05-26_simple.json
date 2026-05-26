@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Penny Momentum",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-26",
+  "total_trades": 271,
+  "winning_trades": 38,
+  "losing_trades": 233,
+  "total_pnl": -2561.037,
+  "max_drawdown": 2.561,
+  "sharpe_ratio": 0.0161,
+  "win_rate": 0.1402,
+  "avg_trade_pnl": -5.8172,
+  "equity_curve_length": 543
+}

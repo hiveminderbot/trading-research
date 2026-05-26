@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Volume Breakout",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-26",
+  "total_trades": 59,
+  "winning_trades": 16,
+  "losing_trades": 43,
+  "total_pnl": -403.5335,
+  "max_drawdown": 0.4035,
+  "sharpe_ratio": -0.34,
+  "win_rate": 0.2712,
+  "avg_trade_pnl": -3.0879,
+  "equity_curve_length": 119
+}

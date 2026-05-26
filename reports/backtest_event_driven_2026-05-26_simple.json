@@ -1,0 +1,14 @@
+{
+  "strategy_name": "Event Driven",
+  "start_date": "2026-05-19",
+  "end_date": "2026-05-26",
+  "total_trades": 194,
+  "winning_trades": 16,
+  "losing_trades": 178,
+  "total_pnl": -1437.5726,
+  "max_drawdown": 1.4376,
+  "sharpe_ratio": -0.052,
+  "win_rate": 0.0825,
+  "avg_trade_pnl": -5.0577,
+  "equity_curve_length": 389
+}
