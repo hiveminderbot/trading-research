@@ -1476,3 +1476,63 @@
 [2026-05-26T17:04:26.638701+00:00] New records: 0, Changed prices: 1588
 [2026-05-26T17:04:32.562979+00:00] Daily report written: reports/daily_report_2026-05-26.md
 [2026-05-26T17:04:32.572704+00:00] Pipeline complete.
+[2026-05-26T17:59:19.423621+00:00] ============================================================
+[2026-05-26T17:59:19.423785+00:00] Kalshi Intraday Runner — run_id=2026-05-26T12:00:00+00:00
+[2026-05-26T17:59:19.424842+00:00] Run 2026-05-26T12:00:00+00:00 already exists in pipeline_runs. Skipping (use --force to override).
+[2026-05-26T17:59:23.191725+00:00] ============================================================
+[2026-05-26T17:59:23.191809+00:00] Kalshi Intraday Runner — run_id=2026-05-26T12:00:00+00:00
+[2026-05-26T17:59:23.276164+00:00] Exchange active: True
+[2026-05-26T17:59:23.400867+00:00] Series KXFEDDECISION: 75 markets
+[2026-05-26T17:59:24.005718+00:00] Series KXFRM: no markets
+[2026-05-26T17:59:24.616274+00:00] Series KX10Y: no markets
+[2026-05-26T17:59:25.227197+00:00] Series KX10Y3M: 1 markets
+[2026-05-26T17:59:25.841328+00:00] Series KX10Y2Y: 1 markets
+[2026-05-26T17:59:26.455186+00:00] Series KXTREASURY: no markets
+[2026-05-26T17:59:27.071446+00:00] Series KXYIELD: no markets
+[2026-05-26T17:59:27.684265+00:00] Series KXBOND: 23 markets
+[2026-05-26T17:59:28.296528+00:00] Series KXDOTPLOT: 8 markets
+[2026-05-26T17:59:29.473739+00:00] Series KXNASDAQ100: 1440 markets
+[2026-05-26T17:59:30.090840+00:00] Series KXSPY: no markets
+[2026-05-26T17:59:30.702046+00:00] Series KXSP500: no markets
+[2026-05-26T17:59:31.313780+00:00] Series KXDOW: no markets
+[2026-05-26T17:59:41.876721+00:00] Series KXBTC: 20000 markets
+[2026-05-26T17:59:53.465265+00:00] Series KXETH: 20000 markets
+[2026-05-26T17:59:54.086404+00:00] Series KXBTC100: no markets
+[2026-05-26T17:59:54.696342+00:00] Series BTCATH: no markets
+[2026-05-26T17:59:55.314552+00:00] Series ETHD: no markets
+[2026-05-26T17:59:57.255947+00:00] Series KXEURUSDH: 2730 markets
+[2026-05-26T17:59:57.891705+00:00] Series KXGBPUSD: no markets
+[2026-05-26T17:59:58.576679+00:00] Series KXUSDJPY: 810 markets
+[2026-05-26T17:59:59.194069+00:00] Series KXUSDQ: 6 markets
+[2026-05-26T17:59:59.914535+00:00] Series KXFXPESO: no markets
+[2026-05-26T18:00:00.522966+00:00] Series KXGOLD: no markets
+[2026-05-26T18:00:01.129882+00:00] Series KXSILVER: no markets
+[2026-05-26T18:00:01.811140+00:00] Series KXOIL: no markets
+[2026-05-26T18:00:02.957651+00:00] Series KXWTI: 1031 markets
+[2026-05-26T18:00:03.568088+00:00] Series WTIH: no markets
+[2026-05-26T18:00:04.197514+00:00] Series KXCPI: 83 markets
+[2026-05-26T18:00:04.813595+00:00] Rate limited (429), sleeping 2s...
+[2026-05-26T18:00:06.924671+00:00] Rate limited (429), sleeping 3s...
+[2026-05-26T18:00:10.244453+00:00] Series KXCPIYOY: 115 markets
+[2026-05-26T18:00:10.851716+00:00] Rate limited (429), sleeping 2s...
+[2026-05-26T18:00:12.967190+00:00] Rate limited (429), sleeping 3s...
+[2026-05-26T18:00:16.084302+00:00] Rate limited (429), sleeping 5s...
+[2026-05-26T18:00:21.198776+00:00] Rate limited (429), sleeping 9s...
+[2026-05-26T18:00:30.311901+00:00] Series ACPI: error - HTTP Error 429: Too Many Requests
+[2026-05-26T18:00:30.911521+00:00] Rate limited (429), sleeping 2s...
+[2026-05-26T18:00:33.027940+00:00] Series ACPICORE: no markets
+[2026-05-26T18:00:33.641840+00:00] Series KXUNEMPLOYMENT: no markets
+[2026-05-26T18:00:34.264019+00:00] Series KXGDP: 25 markets
+[2026-05-26T18:00:34.872282+00:00] Series GDPEU: no markets
+[2026-05-26T18:00:35.479893+00:00] Rate limited (429), sleeping 2s...
+[2026-05-26T18:00:37.597069+00:00] Series KXINFLATION: no markets
+[2026-05-26T18:00:38.213052+00:00] Series KXCBDECISIONCANADA: 30 markets
+[2026-05-26T18:00:38.827009+00:00] Series KXCBDECISIONJAPAN: 10 markets
+[2026-05-26T18:00:39.435482+00:00] Rate limited (429), sleeping 2s...
+[2026-05-26T18:00:41.555861+00:00] Series KXCBDECISIONENGLAND: 10 markets
+[2026-05-26T18:00:42.179393+00:00] Series KXBOE: no markets
+[2026-05-26T18:00:42.783531+00:00] Series KXECB: 3 markets
+[2026-05-26T18:00:43.283893+00:00] Total financial markets fetched: 46401
+[2026-05-26T18:00:43.968499+00:00] New records: 0, Changed prices: 1579
+[2026-05-26T18:00:46.311428+00:00] Daily report written: reports/daily_report_2026-05-26.md
+[2026-05-26T18:00:46.321903+00:00] Pipeline complete.
