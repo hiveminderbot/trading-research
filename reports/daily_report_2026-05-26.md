@@ -1,6 +1,6 @@
 # Kalshi Daily Market Report — 2026-05-26
 
-**Run at:** 2026-05-26T12:00:00+00:00  
+**Run at:** 2026-05-26T18:00:00+00:00  
 **Total unique markets in DB:** 113661  
 **Markets in this run:** 46401  
 
@@ -8,36 +8,36 @@
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume | Open Interest |
 |--------|-------|---------|---------|--------|---------------|
-| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 91,653 | 2155634.85 |
-| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 62,651 | 2100952.83 |
-| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.02 | 0.03 | 57,156 | 2130205.31 |
-| KXBTC-26MAY2511-T85799.99 | Bitcoin price range  on May 25, 2026? | 0.0 | 1.0 | 40,335 | 40335.0 |
-| KXWTI-26MAY2614-T91.99 | Will the WTI crude oil settlement price be above 9 | 0.69 | 0.7 | 39,948 | 26112.27 |
-| KXWTI-26MAY2614-T92.99 | Will the WTI crude oil settlement price be above 9 | 0.48 | 0.49 | 36,591 | 29225.54 |
-| KXWTI-26MAY2614-T88.99 | Will the WTI crude oil settlement price be above 8 | 0.92 | 0.94 | 32,544 | 43758.05 |
-| KXWTI-26MAY2614-T90.99 | Will the WTI crude oil settlement price be above 9 | 0.81 | 0.84 | 32,020 | 25130.28 |
-| KXFEDDECISION-26JUN-C26 | Will the Federal Reserve Cut rates by >25bps at th | 0.0 | 0.01 | 30,430 | 1401708.77 |
-| KXWTI-26MAY2614-T89.99 | Will the WTI crude oil settlement price be above 8 | 0.92 | 0.93 | 30,020 | 32617.92 |
+| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 203,949 | 2252989.86 |
+| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.03 | 0.04 | 146,921 | 2238475.03 |
+| KXWTI-26MAY2614-T93.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 85,888 | 38056.06 |
+| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 84,122 | 2170228.34 |
+| KXWTI-26MAY2614-T92.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 82,038 | 45642.62 |
+| KXWTI-26MAY2614-T91.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 59,652 | 35526.09 |
+| KXWTI-26MAY2614-T94.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 48,675 | 25510.41 |
+| KXWTI-26MAY2614-T89.99 | Will the WTI crude oil settlement price be above 8 | 0.0 | 1.0 | 37,503 | 36480.3 |
+| KXWTI-26MAY2614-T90.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 32,450 | 24831.42 |
+| KXWTI-26MAY2614-T95.99 | Will the WTI crude oil settlement price be above 9 | 0.0 | 1.0 | 32,249 | 21399.16 |
 
 ## Top 15 Price Movers (vs previous snapshot)
 
 | Ticker | Title | Prev Bid | Curr Bid | Change % | Volume |
 |--------|-------|----------|----------|----------|--------|
-| KX10Y2Y-26DEC31-T1.00 | Will the 10-year minus 2-year Treasury spread | 0.18 | 0.18 | +0.0% | 0 |
-| KX10Y3M-26DEC31-T0.75 | Will the 10-year minus 3-month Treasury sprea | 0.99 | 0.99 | +0.0% | 0 |
-| KXBOND-30-AP | Will Aaron Pierre be the next James Bond? | 0.05 | 0.05 | +0.0% | 78 |
-| KXBOND-30-ATJ | Will Aaron Taylor-Johnson be the next James B | 0.08 | 0.08 | +0.0% | 140 |
-| KXBOND-30-CAL | Will Callum Turner be the next James Bond? | 0.44 | 0.44 | +0.0% | 14,224 |
-| KXBOND-30-CHARL | Will Charlie Hunnam be the next James Bond? | 0.02 | 0.02 | +0.0% | 94 |
-| KXBOND-30-CIL | Will Cillian Murphy be the next James Bond? | 0.02 | 0.02 | +0.0% | 0 |
-| KXBOND-30-DI | Will Damson Idris be the next James Bond? | 0.04 | 0.04 | +0.0% | 189 |
-| KXBOND-30-HAR | Will Harris Dickinson be the next James Bond? | 0.05 | 0.05 | +0.0% | 176 |
-| KXBOND-30-HC | Will Henry Cavill be the next James Bond? | 0.08 | 0.08 | +0.0% | 84 |
-| KXBOND-30-HENR | Will Henry Ashton be the next James Bond? | 0.04 | 0.04 | +0.0% | 65 |
-| KXBOND-30-IDRIS | Will Idris Elba be the next James Bond? | 0.04 | 0.04 | +0.0% | 99 |
-| KXBOND-30-JAC | Will Jack Lowden be the next James Bond? | 0.05 | 0.05 | +0.0% | 0 |
-| KXBOND-30-JACO | Will Jacob Elordi be the next James Bond? | 0.18 | 0.18 | +0.0% | 4,287 |
-| KXBOND-30-JN | Will James Norton be the next James Bond? | 0.02 | 0.02 | +0.0% | 0 |
+| KXBTC-26MAY2617-B75875 | Bitcoin price range  on May 26, 2026? | 0.03 | 0.57 | +1800.0% | 4,013 |
+| KXBTC-26MAY2617-B76125 | Bitcoin price range  on May 26, 2026? | 0.06 | 0.43 | +616.7% | 9,112 |
+| KXWTI-26NOV03-T114.99 | Will the WTI front-month settle oil price  be | 0.03 | 0.14 | +366.7% | 230 |
+| KXETH-26MAY2617-B2080 | Ethereum price at May 26, 2026 at 5pm EDT? | 0.21 | 0.98 | +366.7% | 8,798 |
+| KXCPIYOY-26JUL-T3.2 | Will the rate of CPI inflation be above 3.2%  | 0.02 | 0.08 | +300.0% | 0 |
+| KXWTI-26NOV03-T104.99 | Will the WTI front-month settle oil price  be | 0.05 | 0.19 | +280.0% | 11 |
+| KXETH-26MAY2917-B1960 | Ethereum price at May 29, 2026 at 5pm EDT? | 0.02 | 0.07 | +250.0% | 899 |
+| KXCPIYOY-26JUL-T3.0 | Will the rate of CPI inflation be above 3.0%  | 0.03 | 0.07 | +133.3% | 0 |
+| KXWTI-26NOV03-T106.99 | Will the WTI front-month settle oil price  be | 0.04 | 0.09 | +125.0% | 2 |
+| KXBOND-30-HAR | Will Harris Dickinson be the next James Bond? | 0.05 | 0.1 | +100.0% | 1,468 |
+| KXBTC-26MAY2610-B76350 | Bitcoin price range  on May 26, 2026? | 0.01 | 0.0 | -100.0% | 316 |
+| KXBTC-26MAY2610-B76450 | Bitcoin price range  on May 26, 2026? | 0.03 | 0.0 | -100.0% | 958 |
+| KXBTC-26MAY2610-B76550 | Bitcoin price range  on May 26, 2026? | 0.05 | 0.0 | -100.0% | 422 |
+| KXBTC-26MAY2610-B76650 | Bitcoin price range  on May 26, 2026? | 0.07 | 0.0 | -100.0% | 288 |
+| KXBTC-26MAY2610-B76750 | Bitcoin price range  on May 26, 2026? | 0.13 | 0.0 | -100.0% | 3,832 |
 
 ## New Markets (first appearance)
 

@@ -2,13 +2,13 @@
   "strategy_name": "Momentum Follower 2-Snap",
   "start_date": "2026-05-19",
   "end_date": "2026-05-26",
-  "total_trades": 551,
-  "winning_trades": 68,
-  "losing_trades": 483,
-  "total_pnl": -4499.7832,
-  "max_drawdown": 4.4998,
-  "sharpe_ratio": 0.0004,
-  "win_rate": 0.1234,
-  "avg_trade_pnl": -4.3172,
-  "equity_curve_length": 1103
+  "total_trades": 612,
+  "winning_trades": 76,
+  "losing_trades": 536,
+  "total_pnl": -4872.299,
+  "max_drawdown": 4.8723,
+  "sharpe_ratio": -0.0076,
+  "win_rate": 0.1242,
+  "avg_trade_pnl": -3.9918,
+  "equity_curve_length": 1225
 }

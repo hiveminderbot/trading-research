@@ -2,13 +2,13 @@
   "strategy_name": "Mean Reversion Strategy",
   "start_date": "2026-05-19",
   "end_date": "2026-05-26",
-  "total_trades": 118,
-  "winning_trades": 26,
-  "losing_trades": 92,
-  "total_pnl": -1614.3827,
-  "max_drawdown": 1.633,
-  "sharpe_ratio": 0.0625,
-  "win_rate": 0.2203,
-  "avg_trade_pnl": -6.4993,
-  "equity_curve_length": 237
+  "total_trades": 141,
+  "winning_trades": 33,
+  "losing_trades": 108,
+  "total_pnl": -1683.8154,
+  "max_drawdown": 1.7133,
+  "sharpe_ratio": -0.0472,
+  "win_rate": 0.234,
+  "avg_trade_pnl": -5.4436,
+  "equity_curve_length": 283
 }

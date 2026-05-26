@@ -2,13 +2,13 @@
   "strategy_name": "Momentum Strategy",
   "start_date": "2026-05-19",
   "end_date": "2026-05-26",
-  "total_trades": 73,
-  "winning_trades": 6,
-  "losing_trades": 67,
-  "total_pnl": -1199.8433,
-  "max_drawdown": 1.1998,
-  "sharpe_ratio": -0.0984,
-  "win_rate": 0.0822,
-  "avg_trade_pnl": -9.0791,
-  "equity_curve_length": 147
+  "total_trades": 87,
+  "winning_trades": 8,
+  "losing_trades": 79,
+  "total_pnl": -1456.6152,
+  "max_drawdown": 1.4566,
+  "sharpe_ratio": 0.0418,
+  "win_rate": 0.092,
+  "avg_trade_pnl": -9.7092,
+  "equity_curve_length": 175
 }
