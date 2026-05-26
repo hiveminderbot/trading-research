@@ -1273,3 +1273,7 @@
 [2026-05-26T04:34:31.114050+00:00] New records: 0, Changed prices: 984
 [2026-05-26T04:34:33.006949+00:00] Daily report written: reports/daily_report_2026-05-26.md
 [2026-05-26T04:34:33.018287+00:00] Pipeline complete.
+[2026-05-26T05:09:01.615725+00:00] ============================================================
+[2026-05-26T05:09:01.615880+00:00] Kalshi Intraday Runner — run_id=2026-05-26T00:00:00+00:00
+[2026-05-26T05:09:02.682325+00:00] Coverage report written: reports/coverage_report_2026-05-26.md
+[2026-05-26T05:09:02.682838+00:00] Coverage report complete.
