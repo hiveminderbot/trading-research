@@ -1,43 +1,43 @@
 # Kalshi Daily Market Report — 2026-05-26
 
-**Run at:** 2026-05-26T06:00:00+00:00  
-**Total unique markets in DB:** 107447  
-**Markets in this run:** 46416  
+**Run at:** 2026-05-26T13:20:46+00:00  
+**Total unique markets in DB:** 113661  
+**Markets in this run:** 46401  
 
 ## Top 10 Markets by Volume
 
 | Ticker | Title | Yes Bid | Yes Ask | Volume | Open Interest |
 |--------|-------|---------|---------|--------|---------------|
-| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 82,621 | 2143703.1 |
-| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 79,887 | 2094763.52 |
-| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.02 | 0.03 | 58,948 | 2130884.15 |
+| KXFEDDECISION-26JUN-H0 | Will the Federal Reserve Hike rates by 0bps at the | 0.96 | 0.97 | 91,666 | 2155638.85 |
+| KXFEDDECISION-26JUN-H25 | Will the Federal Reserve Hike rates by 25bps at th | 0.01 | 0.02 | 61,901 | 2101702.83 |
+| KXFEDDECISION-26JUN-C25 | Will the Federal Reserve Cut rates by 25bps at the | 0.02 | 0.03 | 56,924 | 2132253.66 |
+| KXWTI-26MAY2614-T91.99 | Will the WTI crude oil settlement price be above 9 | 0.71 | 0.73 | 41,371 | 27315.75 |
 | KXBTC-26MAY2511-T85799.99 | Bitcoin price range  on May 25, 2026? | 0.0 | 1.0 | 40,335 | 40335.0 |
-| KXFEDDECISION-26JUN-C26 | Will the Federal Reserve Cut rates by >25bps at th | 0.0 | 0.01 | 35,661 | 1400875.77 |
-| KXWTI-26MAY2614-T91.99 | Will the WTI crude oil settlement price be above 9 | 0.53 | 0.55 | 35,569 | 22517.48 |
-| KXWTI-26MAY2614-T88.99 | Will the WTI crude oil settlement price be above 8 | 0.84 | 0.85 | 32,987 | 43587.78 |
-| KXWTI-26MAY2614-T92.99 | Will the WTI crude oil settlement price be above 9 | 0.4 | 0.42 | 27,691 | 22774.78 |
-| KXWTI-26MAY2614-T90.99 | Will the WTI crude oil settlement price be above 9 | 0.64 | 0.65 | 27,471 | 25256.9 |
-| KXWTI-26MAY2614-T89.99 | Will the WTI crude oil settlement price be above 8 | 0.75 | 0.76 | 23,769 | 30325.1 |
+| KXWTI-26MAY2614-T92.99 | Will the WTI crude oil settlement price be above 9 | 0.53 | 0.55 | 37,357 | 30372.07 |
+| KXWTI-26MAY2614-T88.99 | Will the WTI crude oil settlement price be above 8 | 0.95 | 0.96 | 33,835 | 44891.02 |
+| KXWTI-26MAY2614-T90.99 | Will the WTI crude oil settlement price be above 9 | 0.85 | 0.86 | 31,752 | 25123.35 |
+| KXWTI-26MAY2614-T89.99 | Will the WTI crude oil settlement price be above 8 | 0.94 | 0.95 | 30,847 | 32780.46 |
+| KXFEDDECISION-26JUN-C26 | Will the Federal Reserve Cut rates by >25bps at th | 0.0 | 0.01 | 29,430 | 1401708.77 |
 
 ## Top 15 Price Movers (vs previous snapshot)
 
 | Ticker | Title | Prev Bid | Curr Bid | Change % | Volume |
 |--------|-------|----------|----------|----------|--------|
-| KXWTI-26NOV03-T112.99 | Will the WTI front-month settle oil price  be | 0.02 | 0.09 | +350.0% | 128 |
-| KXBTC-26MAY2523-B76450 | Bitcoin price range  on May 25, 2026? | 0.1 | 0.0 | -100.0% | 150 |
-| KXBTC-26MAY2523-B76550 | Bitcoin price range  on May 25, 2026? | 0.28 | 0.0 | -100.0% | 1,880 |
-| KXBTC-26MAY2523-B76650 | Bitcoin price range  on May 25, 2026? | 0.37 | 0.0 | -100.0% | 1,745 |
-| KXBTC-26MAY2523-B76750 | Bitcoin price range  on May 25, 2026? | 0.12 | 0.0 | -100.0% | 1,058 |
-| KXBTC-26MAY2523-B76850 | Bitcoin price range  on May 25, 2026? | 0.02 | 0.0 | -100.0% | 124 |
-| KXBTC-26MAY2617-B74875 | Bitcoin price range  on May 26, 2026? | 0.01 | 0.0 | -100.0% | 23 |
-| KXETH-26MAY2523-B2070 | Ethereum price at May 25, 2026 at 11pm EDT? | 0.02 | 0.0 | -100.0% | 1,360 |
-| KXETH-26MAY2523-B2090 | Ethereum price at May 25, 2026 at 11pm EDT? | 0.64 | 0.0 | -100.0% | 100 |
-| KXETH-26MAY2523-B2110 | Ethereum price at May 25, 2026 at 11pm EDT? | 0.02 | 0.0 | -100.0% | 130 |
-| KXNASDAQ100-26MAY29H1600-B29350 | Will the Nasdaq-100 be between 29300 and 2939 | 0.02 | 0.04 | +100.0% | 0 |
-| KXNASDAQ100-26MAY29H1600-B29450 | Will the Nasdaq-100 be between 29400 and 2949 | 0.02 | 0.04 | +100.0% | 0 |
-| KXNASDAQ100-26MAY29H1600-B30050 | Will the Nasdaq-100 be between 30000 and 3009 | 0.02 | 0.04 | +100.0% | 0 |
-| KXNASDAQ100-26MAY29H1600-B30650 | Will the Nasdaq-100 be between 30600 and 3069 | 0.01 | 0.0 | -100.0% | 0 |
-| KXUSDJPY-26MAY2610-B158.125 | Will the USD/JPY open price be between 158.00 | 0.01 | 0.0 | -100.0% | 4 |
+| KXETH-26MAY2610-B2110 | Ethereum price at May 26, 2026 at 10am EDT? | 0.1 | 0.53 | +430.0% | 0 |
+| KXETH-26MAY2610-B2130 | Ethereum price at May 26, 2026 at 10am EDT? | 0.1 | 0.38 | +280.0% | 13 |
+| KXWTI-26NOV03-T95.99 | Will the WTI front-month settle oil price  be | 0.03 | 0.1 | +233.3% | 2 |
+| KXWTI-26NOV03-T97.99 | Will the WTI front-month settle oil price  be | 0.03 | 0.1 | +233.3% | 0 |
+| KXWTI-26NOV03-T80.99 | Will the WTI front-month settle oil price  be | 0.1 | 0.33 | +230.0% | 0 |
+| KXWTI-26NOV03-T84.99 | Will the WTI front-month settle oil price  be | 0.07 | 0.23 | +228.6% | 30 |
+| KXWTI-26NOV03-T74.99 | Will the WTI front-month settle oil price  be | 0.15 | 0.47 | +213.3% | 0 |
+| KXWTI-26NOV03-T94.99 | Will the WTI front-month settle oil price  be | 0.03 | 0.09 | +200.0% | 0 |
+| KXWTI-26NOV03-T90.99 | Will the WTI front-month settle oil price  be | 0.07 | 0.17 | +142.9% | 0 |
+| KXWTI-26NOV03-T100.99 | Will the WTI front-month settle oil price  be | 0.03 | 0.07 | +133.3% | 5 |
+| KXWTI-26NOV03-T79.99 | Will the WTI front-month settle oil price  be | 0.2 | 0.45 | +125.0% | 5 |
+| KXWTI-26NOV03-T99.99 | Will the WTI front-month settle oil price  be | 0.04 | 0.09 | +125.0% | 70 |
+| KXWTI-26NOV03-T85.99 | Will the WTI front-month settle oil price  be | 0.11 | 0.24 | +118.2% | 12 |
+| KXETH-26MAY2917-B1960 | Ethereum price at May 29, 2026 at 5pm EDT? | 0.01 | 0.02 | +100.0% | 0 |
+| KXETH-26MAY2917-B2280 | Ethereum price at May 29, 2026 at 5pm EDT? | 0.01 | 0.02 | +100.0% | 631 |
 
 ## New Markets (first appearance)
 

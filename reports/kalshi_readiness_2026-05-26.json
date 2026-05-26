@@ -1,0 +1,947 @@
+{
+  "backtest_summary": [
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_combined_momentum+meanreversion_2026-05-19.json",
+      "max_drawdown": 0.0,
+      "sharpe_ratio": null,
+      "start_date": "2026-05-19",
+      "strategy_name": "Combined Momentum+MeanReversion",
+      "total_pnl": 0.0,
+      "total_trades": 0,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_combined_momentum+meanreversion_2026-05-24.json",
+      "max_drawdown": 0.0325,
+      "sharpe_ratio": -0.7986,
+      "start_date": "2026-05-19",
+      "strategy_name": "Combined Momentum+MeanReversion",
+      "total_pnl": -32.5,
+      "total_trades": 4,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_combined_momentum+meanreversion_2026-05-24_realistic.json",
+      "max_drawdown": 0.1694,
+      "sharpe_ratio": -2.3739,
+      "start_date": "2026-05-19",
+      "strategy_name": "Combined Momentum+MeanReversion",
+      "total_pnl": -169.3554,
+      "total_trades": 4,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_combined_momentum+meanreversion_2026-05-26_realistic.json",
+      "max_drawdown": 0.2979,
+      "sharpe_ratio": -1.5233,
+      "start_date": "2026-05-19",
+      "strategy_name": "Combined Momentum+MeanReversion",
+      "total_pnl": -297.8593,
+      "total_trades": 6,
+      "win_rate": 0.1667
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_combined_momentum+meanreversion_2026-05-26_simple.json",
+      "max_drawdown": 0.1502,
+      "sharpe_ratio": -1.183,
+      "start_date": "2026-05-19",
+      "strategy_name": "Combined Momentum+MeanReversion",
+      "total_pnl": -150.1797,
+      "total_trades": 6,
+      "win_rate": 0.1667
+    },
+    {
+      "end_date": null,
+      "file": "reports/backtest_comparison_realistic_2026-05-25.json",
+      "max_drawdown": null,
+      "sharpe_ratio": null,
+      "start_date": null,
+      "strategy_name": null,
+      "total_pnl": null,
+      "total_trades": null,
+      "win_rate": null
+    },
+    {
+      "end_date": null,
+      "file": "reports/backtest_comparison_simple_2026-05-25.json",
+      "max_drawdown": null,
+      "sharpe_ratio": null,
+      "start_date": null,
+      "strategy_name": null,
+      "total_pnl": null,
+      "total_trades": null,
+      "win_rate": null
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_contrarian_2026-05-19.json",
+      "max_drawdown": 1.0208,
+      "sharpe_ratio": -0.0479,
+      "start_date": "2026-05-19",
+      "strategy_name": "Contrarian",
+      "total_pnl": -1020.8,
+      "total_trades": 516,
+      "win_rate": 0.0019
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_contrarian_2026-05-24.json",
+      "max_drawdown": 1.2068,
+      "sharpe_ratio": 0.0052,
+      "start_date": "2026-05-19",
+      "strategy_name": "Contrarian",
+      "total_pnl": -1206.8,
+      "total_trades": 619,
+      "win_rate": 0.0372
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_contrarian_2026-05-26_realistic.json",
+      "max_drawdown": 22.6866,
+      "sharpe_ratio": 0.0284,
+      "start_date": "2026-05-19",
+      "strategy_name": "Contrarian",
+      "total_pnl": -22686.5874,
+      "total_trades": 636,
+      "win_rate": 0.0094
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_contrarian_2026-05-26_simple.json",
+      "max_drawdown": 11.2005,
+      "sharpe_ratio": 0.0329,
+      "start_date": "2026-05-19",
+      "strategy_name": "Contrarian",
+      "total_pnl": -11200.5034,
+      "total_trades": 645,
+      "win_rate": 0.0186
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_directional_bias_2026-05-19.json",
+      "max_drawdown": 1.0432,
+      "sharpe_ratio": 0.0068,
+      "start_date": "2026-05-19",
+      "strategy_name": "Directional Bias",
+      "total_pnl": -1043.2,
+      "total_trades": 516,
+      "win_rate": 0.0019
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_directional_bias_2026-05-24.json",
+      "max_drawdown": 1.2692,
+      "sharpe_ratio": -0.0263,
+      "start_date": "2026-05-19",
+      "strategy_name": "Directional Bias",
+      "total_pnl": -1269.2,
+      "total_trades": 619,
+      "win_rate": 0.0452
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_directional_bias_2026-05-26_realistic.json",
+      "max_drawdown": 3.8949,
+      "sharpe_ratio": 0.0137,
+      "start_date": "2026-05-19",
+      "strategy_name": "Directional Bias",
+      "total_pnl": -3894.9372,
+      "total_trades": 636,
+      "win_rate": 0.0173
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_directional_bias_2026-05-26_simple.json",
+      "max_drawdown": 1.6844,
+      "sharpe_ratio": -0.0216,
+      "start_date": "2026-05-19",
+      "strategy_name": "Directional Bias",
+      "total_pnl": -1684.4284,
+      "total_trades": 645,
+      "win_rate": 0.0403
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_event_driven_2026-05-19.json",
+      "max_drawdown": 0.002,
+      "sharpe_ratio": -1413.5065,
+      "start_date": "2026-05-19",
+      "strategy_name": "Event Driven",
+      "total_pnl": -2.0,
+      "total_trades": 1,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_event_driven_2026-05-24.json",
+      "max_drawdown": 0.482,
+      "sharpe_ratio": -0.5273,
+      "start_date": "2026-05-19",
+      "strategy_name": "Event Driven",
+      "total_pnl": -482.0,
+      "total_trades": 150,
+      "win_rate": 0.0133
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_event_driven_2026-05-26_realistic.json",
+      "max_drawdown": 2.7254,
+      "sharpe_ratio": -0.0462,
+      "start_date": "2026-05-19",
+      "strategy_name": "Event Driven",
+      "total_pnl": -2725.3575,
+      "total_trades": 202,
+      "win_rate": 0.0594
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_event_driven_2026-05-26_simple.json",
+      "max_drawdown": 1.8618,
+      "sharpe_ratio": -0.0226,
+      "start_date": "2026-05-19",
+      "strategy_name": "Event Driven",
+      "total_pnl": -1861.8022,
+      "total_trades": 252,
+      "win_rate": 0.1151
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_mean_reversion_strategy_2026-05-19.json",
+      "max_drawdown": 0.0,
+      "sharpe_ratio": null,
+      "start_date": "2026-05-19",
+      "strategy_name": "Mean Reversion Strategy",
+      "total_pnl": 0.0,
+      "total_trades": 0,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_mean_reversion_strategy_2026-05-24.json",
+      "max_drawdown": 0.063,
+      "sharpe_ratio": -0.0687,
+      "start_date": "2026-05-19",
+      "strategy_name": "Mean Reversion Strategy",
+      "total_pnl": -26.0,
+      "total_trades": 47,
+      "win_rate": 0.1277
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_mean_reversion_strategy_2026-05-24_realistic.json",
+      "max_drawdown": 0.4462,
+      "sharpe_ratio": -0.4627,
+      "start_date": "2026-05-19",
+      "strategy_name": "Mean Reversion Strategy",
+      "total_pnl": -446.1836,
+      "total_trades": 47,
+      "win_rate": 0.1277
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_mean_reversion_strategy_2026-05-26_realistic.json",
+      "max_drawdown": 2.8047,
+      "sharpe_ratio": -0.0887,
+      "start_date": "2026-05-19",
+      "strategy_name": "Mean Reversion Strategy",
+      "total_pnl": -2804.7105,
+      "total_trades": 93,
+      "win_rate": 0.1613
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_mean_reversion_strategy_2026-05-26_simple.json",
+      "max_drawdown": 1.633,
+      "sharpe_ratio": 0.0625,
+      "start_date": "2026-05-19",
+      "strategy_name": "Mean Reversion Strategy",
+      "total_pnl": -1614.3827,
+      "total_trades": 118,
+      "win_rate": 0.2203
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_momentum_follower_2-snap_2026-05-19.json",
+      "max_drawdown": 0.038,
+      "sharpe_ratio": -88.3063,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Follower 2-Snap",
+      "total_pnl": -38.0,
+      "total_trades": 19,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_momentum_follower_2-snap_2026-05-24.json",
+      "max_drawdown": 0.941,
+      "sharpe_ratio": -0.38,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Follower 2-Snap",
+      "total_pnl": -941.0,
+      "total_trades": 371,
+      "win_rate": 0.0728
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_momentum_follower_2-snap_2026-05-26_realistic.json",
+      "max_drawdown": 8.1407,
+      "sharpe_ratio": 0.0369,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Follower 2-Snap",
+      "total_pnl": -8140.7387,
+      "total_trades": 469,
+      "win_rate": 0.0384
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_momentum_follower_2-snap_2026-05-26_simple.json",
+      "max_drawdown": 4.4998,
+      "sharpe_ratio": 0.0004,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Follower 2-Snap",
+      "total_pnl": -4499.7832,
+      "total_trades": 551,
+      "win_rate": 0.1234
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_momentum_strategy_2026-05-19.json",
+      "max_drawdown": 0.0,
+      "sharpe_ratio": null,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Strategy",
+      "total_pnl": 0.0,
+      "total_trades": 0,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_momentum_strategy_2026-05-24.json",
+      "max_drawdown": 0.1635,
+      "sharpe_ratio": -0.4364,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Strategy",
+      "total_pnl": -163.5,
+      "total_trades": 24,
+      "win_rate": 0.0417
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_momentum_strategy_2026-05-24_realistic.json",
+      "max_drawdown": 0.9309,
+      "sharpe_ratio": -0.8917,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Strategy",
+      "total_pnl": -930.8526,
+      "total_trades": 24,
+      "win_rate": 0.0417
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_momentum_strategy_2026-05-26_realistic.json",
+      "max_drawdown": 1.5367,
+      "sharpe_ratio": -0.0669,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Strategy",
+      "total_pnl": -1536.7332,
+      "total_trades": 43,
+      "win_rate": 0.0698
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_momentum_strategy_2026-05-26_simple.json",
+      "max_drawdown": 1.1998,
+      "sharpe_ratio": -0.0984,
+      "start_date": "2026-05-19",
+      "strategy_name": "Momentum Strategy",
+      "total_pnl": -1199.8433,
+      "total_trades": 73,
+      "win_rate": 0.0822
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_naive_momentum_2026-05-19.json",
+      "max_drawdown": 0.068,
+      "sharpe_ratio": -48.8538,
+      "start_date": "2026-05-19",
+      "strategy_name": "Naive Momentum",
+      "total_pnl": -68.0,
+      "total_trades": 34,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_naive_momentum_2026-05-24.json",
+      "max_drawdown": 1.6115,
+      "sharpe_ratio": 0.0271,
+      "start_date": "2026-05-19",
+      "strategy_name": "Naive Momentum",
+      "total_pnl": -1611.5,
+      "total_trades": 680,
+      "win_rate": 0.0603
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_naive_momentum_2026-05-26_realistic.json",
+      "max_drawdown": 22.2475,
+      "sharpe_ratio": 0.0034,
+      "start_date": "2026-05-19",
+      "strategy_name": "Naive Momentum",
+      "total_pnl": -22247.5205,
+      "total_trades": 902,
+      "win_rate": 0.0355
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_naive_momentum_2026-05-26_simple.json",
+      "max_drawdown": 12.1769,
+      "sharpe_ratio": 0.0259,
+      "start_date": "2026-05-19",
+      "strategy_name": "Naive Momentum",
+      "total_pnl": -12176.8847,
+      "total_trades": 1074,
+      "win_rate": 0.0959
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_pair_snapshot_2026-05-19.json",
+      "max_drawdown": 0.0333,
+      "sharpe_ratio": -0.2866,
+      "start_date": "2026-05-19",
+      "strategy_name": "Pair Snapshot",
+      "total_pnl": -32.65,
+      "total_trades": 34,
+      "win_rate": 0.1471
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_pair_snapshot_2026-05-24.json",
+      "max_drawdown": 0.4011,
+      "sharpe_ratio": -0.0726,
+      "start_date": "2026-05-19",
+      "strategy_name": "Pair Snapshot",
+      "total_pnl": -346.65,
+      "total_trades": 158,
+      "win_rate": 0.3924
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_pair_snapshot_2026-05-26_realistic.json",
+      "max_drawdown": 6.9495,
+      "sharpe_ratio": 0.0264,
+      "start_date": "2026-05-19",
+      "strategy_name": "Pair Snapshot",
+      "total_pnl": -6949.4805,
+      "total_trades": 201,
+      "win_rate": 0.1592
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_pair_snapshot_2026-05-26_simple.json",
+      "max_drawdown": 3.558,
+      "sharpe_ratio": 0.0571,
+      "start_date": "2026-05-19",
+      "strategy_name": "Pair Snapshot",
+      "total_pnl": -3557.9841,
+      "total_trades": 213,
+      "win_rate": 0.3239
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_penny_momentum_2026-05-19.json",
+      "max_drawdown": 0.004,
+      "sharpe_ratio": -773.4338,
+      "start_date": "2026-05-19",
+      "strategy_name": "Penny Momentum",
+      "total_pnl": -4.0,
+      "total_trades": 2,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_penny_momentum_2026-05-24.json",
+      "max_drawdown": 0.847,
+      "sharpe_ratio": -0.2515,
+      "start_date": "2026-05-19",
+      "strategy_name": "Penny Momentum",
+      "total_pnl": -835.0,
+      "total_trades": 214,
+      "win_rate": 0.1589
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_penny_momentum_2026-05-26_realistic.json",
+      "max_drawdown": 5.3882,
+      "sharpe_ratio": 0.0186,
+      "start_date": "2026-05-19",
+      "strategy_name": "Penny Momentum",
+      "total_pnl": -5388.2104,
+      "total_trades": 297,
+      "win_rate": 0.0909
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_penny_momentum_2026-05-26_simple.json",
+      "max_drawdown": 3.0036,
+      "sharpe_ratio": 0.0412,
+      "start_date": "2026-05-19",
+      "strategy_name": "Penny Momentum",
+      "total_pnl": -3003.5502,
+      "total_trades": 339,
+      "win_rate": 0.1711
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_spread_mean_reversion_2026-05-19.json",
+      "max_drawdown": 0.002,
+      "sharpe_ratio": -1413.5065,
+      "start_date": "2026-05-19",
+      "strategy_name": "Spread Mean Reversion",
+      "total_pnl": -2.0,
+      "total_trades": 1,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_spread_mean_reversion_2026-05-24.json",
+      "max_drawdown": 0.214,
+      "sharpe_ratio": -0.1129,
+      "start_date": "2026-05-19",
+      "strategy_name": "Spread Mean Reversion",
+      "total_pnl": -159.0,
+      "total_trades": 88,
+      "win_rate": 0.2614
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_spread_mean_reversion_2026-05-26_realistic.json",
+      "max_drawdown": 2.4726,
+      "sharpe_ratio": 0.0576,
+      "start_date": "2026-05-19",
+      "strategy_name": "Spread Mean Reversion",
+      "total_pnl": -2472.5863,
+      "total_trades": 133,
+      "win_rate": 0.1353
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_spread_mean_reversion_2026-05-26_simple.json",
+      "max_drawdown": 1.7238,
+      "sharpe_ratio": 0.0518,
+      "start_date": "2026-05-19",
+      "strategy_name": "Spread Mean Reversion",
+      "total_pnl": -1744.1014,
+      "total_trades": 161,
+      "win_rate": 0.2112
+    },
+    {
+      "end_date": "2026-05-19",
+      "file": "reports/backtest_volume_breakout_2026-05-19.json",
+      "max_drawdown": 0.0,
+      "sharpe_ratio": null,
+      "start_date": "2026-05-19",
+      "strategy_name": "Volume Breakout",
+      "total_pnl": 0.0,
+      "total_trades": 0,
+      "win_rate": 0.0
+    },
+    {
+      "end_date": "2026-05-24",
+      "file": "reports/backtest_volume_breakout_2026-05-24.json",
+      "max_drawdown": 0.0517,
+      "sharpe_ratio": 0.0675,
+      "start_date": "2026-05-19",
+      "strategy_name": "Volume Breakout",
+      "total_pnl": 45.0,
+      "total_trades": 33,
+      "win_rate": 0.1212
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_volume_breakout_2026-05-26_realistic.json",
+      "max_drawdown": 0.9884,
+      "sharpe_ratio": -0.4883,
+      "start_date": "2026-05-19",
+      "strategy_name": "Volume Breakout",
+      "total_pnl": -988.4493,
+      "total_trades": 65,
+      "win_rate": 0.2154
+    },
+    {
+      "end_date": "2026-05-26",
+      "file": "reports/backtest_volume_breakout_2026-05-26_simple.json",
+      "max_drawdown": 0.4273,
+      "sharpe_ratio": -0.2661,
+      "start_date": "2026-05-19",
+      "strategy_name": "Volume Breakout",
+      "total_pnl": -419.8246,
+      "total_trades": 69,
+      "win_rate": 0.3478
+    }
+  ],
+  "capital_readiness_verdict": "NOT READY",
+  "cross_day_overlap": [
+    {
+      "day_a": "2026-05-23",
+      "day_b": "2026-05-24",
+      "overlapping_tickers": 599
+    },
+    {
+      "day_a": "2026-05-23",
+      "day_b": "2026-05-26",
+      "overlapping_tickers": 599
+    },
+    {
+      "day_a": "2026-05-24",
+      "day_b": "2026-05-26",
+      "overlapping_tickers": 619
+    }
+  ],
+  "date_coverage": [
+    {
+      "day": "2026-05-19",
+      "rows": 15427,
+      "tickers": 12430,
+      "tradeable_rows": 0,
+      "valid_bid_rows": 0
+    },
+    {
+      "day": "2026-05-22",
+      "rows": 35908,
+      "tickers": 32442,
+      "tradeable_rows": 1,
+      "valid_bid_rows": 36
+    },
+    {
+      "day": "2026-05-23",
+      "rows": 325997,
+      "tickers": 46571,
+      "tradeable_rows": 1383,
+      "valid_bid_rows": 4402
+    },
+    {
+      "day": "2026-05-24",
+      "rows": 46511,
+      "tickers": 46511,
+      "tradeable_rows": 212,
+      "valid_bid_rows": 653
+    },
+    {
+      "day": "2026-05-26",
+      "rows": 185634,
+      "tickers": 52630,
+      "tradeable_rows": 796,
+      "valid_bid_rows": 2591
+    }
+  ],
+  "db": "results/kalshi_market_data.db",
+  "generated_at": "2026-05-26T13:35:38.509821+00:00",
+  "history_coverage": {
+    "tickers_2plus_days": 625,
+    "tickers_2plus_snapshots": 704,
+    "tickers_3plus_days": 596,
+    "tickers_4plus_snapshots": 658,
+    "tickers_8plus_snapshots": 600
+  },
+  "latest_pipeline_run": {
+    "changed_prices": 233,
+    "error": null,
+    "markets_fetched": 46401,
+    "new_records": 46401,
+    "run_at": "2026-05-26T13:20:46+00:00"
+  },
+  "latest_run_counts": {
+    "rows": 46401,
+    "tickers": 46401,
+    "tradeable_rows": 195,
+    "usable_spread_rows": 649,
+    "valid_bid_rows": 649
+  },
+  "not_ready_reasons": [
+    "Latest run has 195 tradeable/liquid rows; target >=500 for broad backtest coverage.",
+    "Positive PnL exists but fails risk-adjusted gates (Sharpe >0.5 and max drawdown <20% required): Volume Breakout (PnL=45.0, Sharpe=0.0675, maxDD=0.0517)."
+  ],
+  "recommendation": "Continue data accumulation; do not deploy capital. Re-run after >=7 calendar days and >=100 tickers with 2+ days of liquid, valid prices, then only advance to paper/live if fee-aware backtests turn positive.",
+  "top_repeated_tickers": [
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.02,
+      "max_open_interest": 2132253.66,
+      "max_volume": 113359.09,
+      "min_bid": 0.02,
+      "snapshots": 12,
+      "ticker": "KXFEDDECISION-26JUN-C25"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.01,
+      "max_open_interest": 2101702.83,
+      "max_volume": 113231.88,
+      "min_bid": 0.01,
+      "snapshots": 12,
+      "ticker": "KXFEDDECISION-26JUN-H25"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.96,
+      "max_open_interest": 2155638.85,
+      "max_volume": 104771.7,
+      "min_bid": 0.96,
+      "snapshots": 12,
+      "ticker": "KXFEDDECISION-26JUN-H0"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.95,
+      "max_open_interest": 44891.02,
+      "max_volume": 42005.13,
+      "min_bid": 0.61,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T88.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.88,
+      "max_open_interest": 27315.75,
+      "max_volume": 41370.99,
+      "min_bid": 0.36,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T91.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.83,
+      "max_open_interest": 30372.07,
+      "max_volume": 37356.62,
+      "min_bid": 0.33,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T92.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.89,
+      "max_open_interest": 25256.9,
+      "max_volume": 32019.76,
+      "min_bid": 0.43,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T90.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.94,
+      "max_open_interest": 32780.46,
+      "max_volume": 30846.64,
+      "min_bid": 0.53,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T89.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.78,
+      "max_open_interest": 18155.69,
+      "max_volume": 20467.04,
+      "min_bid": 0.25,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T93.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.73,
+      "max_open_interest": 18957.77,
+      "max_volume": 17212.57,
+      "min_bid": 0.13,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T94.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.5,
+      "max_open_interest": 21857.93,
+      "max_volume": 15102.1,
+      "min_bid": 0.01,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T99.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.46,
+      "max_open_interest": 170517.39,
+      "max_volume": 14224.35,
+      "min_bid": 0.35,
+      "snapshots": 12,
+      "ticker": "KXBOND-30-CAL"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.61,
+      "max_open_interest": 16730.84,
+      "max_volume": 14078.63,
+      "min_bid": 0.04,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T97.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.69,
+      "max_open_interest": 16085.28,
+      "max_volume": 13330.64,
+      "min_bid": 0.09,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T95.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.64,
+      "max_open_interest": 14403.51,
+      "max_volume": 12128.55,
+      "min_bid": 0.06,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T96.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.54,
+      "max_open_interest": 13087.33,
+      "max_volume": 11059.49,
+      "min_bid": 0.03,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2614-T98.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.62,
+      "max_open_interest": 6001.33,
+      "max_volume": 7888.82,
+      "min_bid": 0.21,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2714-T94.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.03,
+      "max_open_interest": 17677.33,
+      "max_volume": 7276.52,
+      "min_bid": 0.01,
+      "snapshots": 12,
+      "ticker": "KXCPIYOY-26MAY-T4.5"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.33,
+      "max_open_interest": 34267.87,
+      "max_volume": 6607.28,
+      "min_bid": 0.24,
+      "snapshots": 12,
+      "ticker": "KXCPIYOY-26MAY-T4.3"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.69,
+      "max_open_interest": 3382.99,
+      "max_volume": 5524.91,
+      "min_bid": 0.27,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2714-T93.99"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.08,
+      "max_open_interest": 77851.39,
+      "max_volume": 4886.67,
+      "min_bid": 0.06,
+      "snapshots": 12,
+      "ticker": "KXFEDDECISION-26JUL-H25"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.99,
+      "max_open_interest": 16549.28,
+      "max_volume": 4675.95,
+      "min_bid": 0.93,
+      "snapshots": 12,
+      "ticker": "KXCPIYOY-26MAY-T3.9"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.18,
+      "max_open_interest": 74836.57,
+      "max_volume": 4287.22,
+      "min_bid": 0.16,
+      "snapshots": 12,
+      "ticker": "KXBOND-30-JACO"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.89,
+      "max_open_interest": 50266.81,
+      "max_volume": 3356.1,
+      "min_bid": 0.87,
+      "snapshots": 12,
+      "ticker": "KXFEDDECISION-26JUL-H0"
+    },
+    {
+      "days": 3,
+      "first_seen": "2026-05-23T00:00:00+00:00",
+      "last_seen": "2026-05-26T13:20:46+00:00",
+      "max_bid": 0.83,
+      "max_open_interest": 4380.12,
+      "max_volume": 3227.9,
+      "min_bid": 0.51,
+      "snapshots": 12,
+      "ticker": "KXWTI-26MAY2714-T89.99"
+    }
+  ]
+}

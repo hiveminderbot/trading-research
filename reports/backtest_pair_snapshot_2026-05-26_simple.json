@@ -2,13 +2,13 @@
   "strategy_name": "Pair Snapshot",
   "start_date": "2026-05-19",
   "end_date": "2026-05-26",
-  "total_trades": 177,
-  "winning_trades": 45,
-  "losing_trades": 132,
-  "total_pnl": -2996.0735,
-  "max_drawdown": 2.9961,
-  "sharpe_ratio": 0.0338,
-  "win_rate": 0.2542,
-  "avg_trade_pnl": -8.3994,
-  "equity_curve_length": 355
+  "total_trades": 213,
+  "winning_trades": 69,
+  "losing_trades": 144,
+  "total_pnl": -3557.9841,
+  "max_drawdown": 3.558,
+  "sharpe_ratio": 0.0571,
+  "win_rate": 0.3239,
+  "avg_trade_pnl": -8.2186,
+  "equity_curve_length": 427
 }

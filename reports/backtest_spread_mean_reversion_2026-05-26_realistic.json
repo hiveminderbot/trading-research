@@ -2,13 +2,13 @@
   "strategy_name": "Spread Mean Reversion",
   "start_date": "2026-05-19",
   "end_date": "2026-05-26",
-  "total_trades": 114,
-  "winning_trades": 16,
-  "losing_trades": 98,
-  "total_pnl": -2147.1679,
-  "max_drawdown": 2.1472,
-  "sharpe_ratio": 0.0245,
-  "win_rate": 0.1404,
-  "avg_trade_pnl": -9.3934,
-  "equity_curve_length": 229
+  "total_trades": 133,
+  "winning_trades": 18,
+  "losing_trades": 115,
+  "total_pnl": -2472.5863,
+  "max_drawdown": 2.4726,
+  "sharpe_ratio": 0.0576,
+  "win_rate": 0.1353,
+  "avg_trade_pnl": -9.3882,
+  "equity_curve_length": 267
 }

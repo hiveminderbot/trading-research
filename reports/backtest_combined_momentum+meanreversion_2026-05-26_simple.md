@@ -1,21 +1,23 @@
 # Kalshi Backtest Report: Combined Momentum+MeanReversion
 
 **Period:** 2026-05-19 to 2026-05-26
-**Total Trades:** 5
+**Total Trades:** 6
 **Winning Trades:** 1
-**Losing Trades:** 4
-**Win Rate:** 20.0%
-**Total PnL:** $-98.58
-**Avg Trade PnL:** $-10.66
-**Max Drawdown:** 9.9%
-**Sharpe Ratio:** -1.021
+**Losing Trades:** 5
+**Win Rate:** 16.7%
+**Total PnL:** $-150.18
+**Avg Trade PnL:** $-13.32
+**Max Drawdown:** 15.0%
+**Sharpe Ratio:** -1.183
 
 ## Trade Log
 
 | Ticker | Action | Side | Price | Time | PnL |
 |--------|--------|------|-------|------|-----|
 | KXBTC-26MAY2917-B78250 | OPEN | YES | 0.070 | 2026-05-26T00:00:00 | - |
-| KXBTC-26MAY2917-B78250 | EXPIRE_SAME_SNAPSHOT | YES | 0.070 | 2026-05-26T00:00:00 | $-14.29 |
+| KXBTC-26MAY2917-B78250 | EXPIRE | YES | 0.065 | 2026-05-26T06:00:00 | $-15.88 |
+| KXBTC-26MAY2917-B79250 | OPEN | YES | 0.040 | 2026-05-26T06:00:00 | - |
+| KXBTC-26MAY2917-B79250 | EXPIRE_SAME_SNAPSHOT | YES | 0.040 | 2026-05-26T06:00:00 | $-25.00 |
 | KXCPI-26SEP-T0.5 | OPEN | YES | 0.305 | 2026-05-23T00:37:51 | - |
 | KXCPI-26SEP-T0.5 | CLOSE | YES | 0.190 | 2026-05-24T00:00:00 | $-16.76 |
 | KXFEDDECISION-26JUL-H25 | OPEN | YES | 0.090 | 2026-05-23T00:37:51 | - |
@@ -23,7 +25,7 @@
 | KXFEDDECISION-27APR-C26 | OPEN | YES | 0.245 | 2026-05-23T00:37:51 | - |
 | KXFEDDECISION-27APR-C26 | CLOSE | YES | 0.135 | 2026-05-24T00:00:00 | $-18.41 |
 | KXFEDDECISION-28JAN-C26 | OPEN | YES | 0.080 | 2026-05-23T00:37:51 | - |
-| KXFEDDECISION-28JAN-C26 | EXPIRE | YES | 0.245 | 2026-05-26T00:00:00 | $12.42 |
+| KXFEDDECISION-28JAN-C26 | EXPIRE | YES | 0.245 | 2026-05-26T13:20:46 | $12.42 |
 
 ## Capital-Readiness Assessment
 
